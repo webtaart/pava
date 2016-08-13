@@ -10,13 +10,9 @@ msgstr ""
 "X-Generator: GlotPress/2.1.0-alpha\n"
 "Project-Id-Version: Network Admin\n"
 
-#: wp-admin/network/users.php:195
-msgid "Users removed from spam."
-msgstr "Gebruikers verwijderd uit spam."
-
-#: wp-admin/network/users.php:198
-msgid "Users deleted."
-msgstr "Gebruikers verwijderd."
+#: wp-admin/network/users.php:162
+msgid "Hover over any user on the list to make the edit links appear. The Edit link on the left will take you to their Edit User profile page; the Edit link on the right by any site name goes to an Edit Site screen for that site."
+msgstr "Hover over een gebruiker in de lijst om de bewerken link te tonen. De linker bewerken link brengt je naar je eigen Profiel bewerken pagina; de bewerken link aan de rechterzijde naast een sitenaam gaat naar het Site bewerken scherm van dit site."
 
 #: wp-admin/network/users.php:163
 msgid "You can also go to the user&#8217;s profile page by clicking on the individual username."
