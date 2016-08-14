@@ -76,6 +76,64 @@ class WC_Gateway_PPEC_Plugin {
 		$this->plugin_path   = trailingslashit( plugin_dir_path( $this->file ) );
 		$this->plugin_url    = trailingslashit( plugin_dir_url( $this->file ) );
 		$this->includes_path = $this->plugin_path . trailingslashit( 'includes' );
+
+		// Updates
+		if ( version_compare( $version, get_option( 'wc_ppec_version' ), '>' ) ) {
+			$this->run_updater( $version );
+		}
+	}
+
+	/**
+	 * Handle updates.
+	 * @param  [type] $new_version [description]
+	 * @return [type]              [description]
+	 */
+	private function run_updater( $new_version ) {
+		// Map old settings to settings API
+		if ( get_option( 'pp_woo_enabled' ) ) {
+			$settings_array                               = (array) get_option( 'woocommerce_ppec_paypal_settings', array() );
+			$settings_array['enabled']                    = get_option( 'pp_woo_enabled' ) ? 'yes' : 'no';
+			$settings_array['logo_image_url']             = get_option( 'pp_woo_logoImageUrl' );
+			$settings_array['paymentAction']              = strtolower( get_option( 'pp_woo_paymentAction', 'sale' ) );
+			$settings_array['subtotal_mismatch_behavior'] = 'addLineItem' === get_option( 'pp_woo_subtotalMismatchBehavior' ) ? 'add' : 'drop';
+			$settings_array['environment']                = get_option( 'pp_woo_environment' );
+			$settings_array['button_size']                = get_option( 'pp_woo_button_size' );
+			$settings_array['instant_payments']           = get_option( 'pp_woo_blockEChecks' );
+			$settings_array['require_billing']            = get_option( 'pp_woo_requireBillingAddress' );
+			$settings_array['debug']                      = get_option( 'pp_woo_logging_enabled' ) ? 'yes' : 'no';
+
+			// Make sure button size is correct.
+			if ( ! in_array( $settings_array['button_size'], array( 'small', 'medium', 'large' ) ) ) {
+				$settings_array['button_size'] = 'medium';
+			}
+
+			// Load client classes before `is_a` check on credentials instance.
+			$this->_load_client();
+
+			$live    = get_option( 'pp_woo_liveApiCredentials' );
+			$sandbox = get_option( 'pp_woo_sandboxApiCredentials' );
+
+			if ( $live && is_a( $live, 'WC_Gateway_PPEC_Client_Credential' ) ) {
+				$settings_array['api_username']    = $live->get_username();
+				$settings_array['api_password']    = $live->get_password();
+				$settings_array['api_signature']   = is_callable( array( $live, 'get_signature' ) ) ? $live->get_signature() : '';
+				$settings_array['api_certificate'] = is_callable( array( $live, 'get_certificate' ) ) ? $live->get_certificate() : '';
+				$settings_array['api_subject']     = $live->get_subject();
+			}
+
+			if ( $sandbox && is_a( $sandbox, 'WC_Gateway_PPEC_Client_Credential' ) ) {
+				$settings_array['sandbox_api_username']    = $sandbox->get_username();
+				$settings_array['sandbox_api_password']    = $sandbox->get_password();
+				$settings_array['sandbox_api_signature']   = is_callable( array( $sandbox, 'get_signature' ) ) ? $sandbox->get_signature() : '';
+				$settings_array['sandbox_api_certificate'] = is_callable( array( $sandbox, 'get_certificate' ) ) ? $sandbox->get_certificate() : '';
+				$settings_array['sandbox_api_subject']     = $sandbox->get_subject();
+			}
+
+			update_option( 'woocommerce_ppec_paypal_settings', $settings_array );
+			delete_option( 'pp_woo_enabled' );
+		}
+
+		update_option( 'wc_ppec_version', $new_version );
 	}
 
 	/**
@@ -85,7 +143,6 @@ class WC_Gateway_PPEC_Plugin {
 		register_activation_hook( $this->file, array( $this, 'activate' ) );
 
 		add_action( 'plugins_loaded', array( $this, 'bootstrap' ) );
-		add_filter( 'plugin_action_links_' . plugin_basename( $this->file ), array( $this, 'plugin_action_links' ) );
 		add_filter( 'allowed_redirect_hosts' , array( $this, 'whitelist_paypal_domains_for_redirect' ) );
 	}
 
@@ -168,7 +225,6 @@ class WC_Gateway_PPEC_Plugin {
 			throw new Exception( $openssl_warning, self::DEPENDENCIES_UNSATISFIED );
 		}
 
-
 		if ( ! version_compare( $matches[1], '1.0.1', '>=' ) ) {
 			throw new Exception( $openssl_warning, self::DEPENDENCIES_UNSATISFIED );
 		}
@@ -183,8 +239,8 @@ class WC_Gateway_PPEC_Plugin {
 	 * @throws Exception
 	 */
 	protected function _check_credentials() {
-		$credential = $this->settings->getActiveApiCredentials();
-		if ( ! is_a( $credential, 'WC_Gateway_PPEC_Client_Credential' ) ) {
+		$credential = $this->settings->get_active_api_credentials();
+		if ( ! is_a( $credential, 'WC_Gateway_PPEC_Client_Credential' ) || '' === $credential->get_username() ) {
 			$setting_link = $this->get_admin_setting_link();
 			throw new Exception( __( 'PayPal Express Checkout is almost ready. To get started, <a href="' . $setting_link . '">connect your PayPal account</a>.', 'woocommerce-gateway-paypal-express-checkout' ), self::NOT_CONNECTED );
 		}
@@ -202,14 +258,6 @@ class WC_Gateway_PPEC_Plugin {
 	 * Callback for activation hook.
 	 */
 	public function activate() {
-		// Enable some options that we recommend for all merchants.
-		add_option( 'pp_woo_enabled', true );
-		add_option( 'pp_woo_allowGuestCheckout', true );
-		add_option( 'pp_woo_enableInContextCheckout', true );
-		/* defer ppc for next next release.
-		add_option( 'pp_woo_ppc_enabled', true );
-		*/
-
 		if ( ! isset( $this->setings ) ) {
 			require_once( $this->includes_path . 'class-wc-gateway-ppec-settings.php' );
 			$settings = new WC_Gateway_PPEC_Settings();
@@ -229,10 +277,7 @@ class WC_Gateway_PPEC_Plugin {
 	 */
 	protected function _load_handlers() {
 		// Client.
-		require_once( $this->includes_path . 'abstracts/abstract-wc-gateway-ppec-client-credential.php' );
-		require_once( $this->includes_path . 'class-wc-gateway-ppec-client-credential-certificate.php' );
-		require_once( $this->includes_path . 'class-wc-gateway-ppec-client-credential-signature.php' );
-		require_once( $this->includes_path . 'class-wc-gateway-ppec-client.php' );
+		$this->_load_client();
 
 		// Load handlers.
 		require_once( $this->includes_path . 'class-wc-gateway-ppec-settings.php' );
@@ -242,41 +287,36 @@ class WC_Gateway_PPEC_Plugin {
 		require_once( $this->includes_path . 'class-wc-gateway-ppec-cart-handler.php' );
 		require_once( $this->includes_path . 'class-wc-gateway-ppec-ips-handler.php' );
 
-		$this->settings = new WC_Gateway_PPEC_Settings();
-		$this->settings->loadSettings();
-
+		$this->settings       = new WC_Gateway_PPEC_Settings();
 		$this->gateway_loader = new WC_Gateway_PPEC_Gateway_Loader();
 		$this->admin          = new WC_Gateway_PPEC_Admin_Handler();
 		$this->checkout       = new WC_Gateway_PPEC_Checkout_Handler();
 		$this->cart           = new WC_Gateway_PPEC_Cart_Handler();
 		$this->ips            = new WC_Gateway_PPEC_IPS_Handler();
-
-		$this->client = new WC_Gateway_PPEC_Client( $this->settings->getActiveApiCredentials(), $this->settings->environment );
+		$this->client         = new WC_Gateway_PPEC_Client( $this->settings->get_active_api_credentials(), $this->settings->environment );
 	}
 
 	/**
-	 * Adds plugin action links
+	 * Load client.
 	 *
-	 * @since 1.0.0
+	 * @since 1.1.0
 	 */
-	public function plugin_action_links( $links ) {
-		$setting_link = $this->get_admin_setting_link();
-
-		$plugin_links = array(
-			'<a href="' . $setting_link . '">' . __( 'Settings', 'woocommerce-gateway-paypal-express-checkout' ) . '</a>',
-			'<a href="http://docs.woothemes.com/document/woocommerce-gateway-paypal-express-checkout/">' . __( 'Docs', 'woocommerce-gateway-paypal-express-checkout' ) . '</a>',
-			'<a href="http://support.woothemes.com/">' . __( 'Support', 'woocommerce-gateway-paypal-express-checkout' ) . '</a>',
-		);
-		return array_merge( $plugin_links, $links );
+	protected function _load_client() {
+		require_once( $this->includes_path . 'abstracts/abstract-wc-gateway-ppec-client-credential.php' );
+		require_once( $this->includes_path . 'class-wc-gateway-ppec-client-credential-certificate.php' );
+		require_once( $this->includes_path . 'class-wc-gateway-ppec-client-credential-signature.php' );
+		require_once( $this->includes_path . 'class-wc-gateway-ppec-client.php' );
 	}
 
+	/**
+	 * Link to settings screen.
+	 */
 	public function get_admin_setting_link() {
 		if ( version_compare( WC()->version, '2.6', '>=' ) ) {
 			$section_slug = 'ppec_paypal';
 		} else {
 			$section_slug = strtolower( 'WC_Gateway_PPEC_With_PayPal' );
 		}
-
 		return admin_url( 'admin.php?page=wc-settings&tab=checkout&section=' . $section_slug );
 	}
 
@@ -294,8 +334,6 @@ class WC_Gateway_PPEC_Plugin {
 		$domains[] = 'paypal.com';
 		$domains[] = 'www.sandbox.paypal.com';
 		$domains[] = 'sandbox.paypal.com';
-
 		return $domains;
 	}
-
 }

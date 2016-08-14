@@ -8,16 +8,13 @@ function woo_pp_start_checkout() {
 		wp_safe_redirect( $redirect_url );
 		exit;
 	} catch( PayPal_API_Exception $e ) {
-		$final_output = '';
-		foreach ( $e->errors as $error ) {
-			$final_output .= '<li>' . __( $error->mapToBuyerFriendlyError(), 'woocommerce-gateway-paypal-express-checkout' ) . '</li>';
-		}
-		wc_add_notice( __( 'Payment error:', 'woocommerce-gateway-paypal-express-checkout' ) . $final_output, 'error' );
+		wc_gateway_ppec_format_paypal_api_exception( $e->errors );
 
 		$redirect_url = WC()->cart->get_cart_url();
-		$settings = wc_gateway_ppec()->settings->loadSettings();
+		$settings     = wc_gateway_ppec()->settings;
+		$client       = wc_gateway_ppec()->client;
 
-		if( 'yes' == $settings->enabled && $settings->enableInContextCheckout && $settings->getActiveApiCredentials()->get_payer_id() ) {
+		if ( $settings->is_enabled() && $client->get_payer_id() ) {
 			ob_end_clean();
 			?>
 			<script type="text/javascript">
@@ -40,6 +37,14 @@ function woo_pp_start_checkout() {
 	}
 }
 
+function wc_gateway_ppec_format_paypal_api_exception( $errors ) {
+	$error_strings = array();
+	foreach ( $errors as $error ) {
+		$error_strings[] = $error->maptoBuyerFriendlyError();
+	}
+	wc_add_notice( __( 'Payment error:', 'woocommerce-gateway-paypal-express-checkout' ) . '<ul><li>' . implode( '</li><li>', $error_strings ) . '</li></ul>', 'error' );
+}
+
 /**
  * Log a message via WC_Logger.
  *
@@ -49,7 +54,7 @@ function wc_gateway_ppec_log( $message ) {
 	static $wc_ppec_logger;
 
 	// No need to write to log file if logging is disabled.
-	if ( ! wc_gateway_ppec()->settings->loadSettings()->logging_enabled ) {
+	if ( ! wc_gateway_ppec()->settings->is_logging_enabled() ) {
 		return false;
 	}
 

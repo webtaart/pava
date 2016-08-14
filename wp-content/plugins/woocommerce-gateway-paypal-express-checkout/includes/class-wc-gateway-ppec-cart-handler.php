@@ -2,11 +2,13 @@
 /**
  * Cart handler.
  */
-
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit;
 }
 
+/**
+ * WC_Gateway_PPEC_Cart_Handler handles button display in the cart.
+ */
 class WC_Gateway_PPEC_Cart_Handler {
 
 	/**
@@ -35,14 +37,13 @@ class WC_Gateway_PPEC_Cart_Handler {
 	 * Constructor.
 	 */
 	public function __construct() {
-		add_action( 'woocommerce_before_cart_totals', array( $this, 'before_cart_totals' ) );
-
-		if ( version_compare( WC()->version, '2.3', '>=' ) ) {
-			add_action( 'woocommerce_after_cart_totals', array( $this, 'display_paypal_button' ) );
-		} else {
-			add_action( 'woocommerce_proceed_to_checkout', array( $this, 'display_paypal_button' ) );
+		if ( ! wc_gateway_ppec()->settings->is_enabled() ) {
+			return;
 		}
 
+		add_action( 'woocommerce_before_cart_totals', array( $this, 'before_cart_totals' ) );
+		add_action( 'woocommerce_widget_shopping_cart_buttons', array( $this, 'display_mini_paypal_button' ), 20 );
+		add_action( 'woocommerce_proceed_to_checkout', array( $this, 'display_paypal_button' ), 20 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 	}
 
@@ -55,100 +56,73 @@ class WC_Gateway_PPEC_Cart_Handler {
 		}
 	}
 
+	/**
+	 * Display paypal button on the cart page
+	 */
 	public function display_paypal_button() {
-		$settings = wc_gateway_ppec()->settings->loadSettings();
-		if( ! $settings->enabled ) {
+		$gateways = WC()->payment_gateways->get_available_payment_gateways();
+		$settings = wc_gateway_ppec()->settings;
+
+		if ( ! isset( $gateways['ppec_paypal'] ) ) {
 			return;
 		}
-
-		$api_credentials = $settings->getActiveApiCredentials();
-		if ( ! is_callable( array( $api_credentials, 'get_payer_id' ) ) ) {
-			return;
-		}
-
-		if ( version_compare( WC()->version, '2.3', '>' ) ) {
-			$class = 'woo_pp_cart_buttons_div';
-		} else {
-			$class = 'woo_pp_checkout_buttons_div';
-		}
-
-		if ( $settings->enableInContextCheckout ) {
-			$class .= ' paypal-button-hidden';
-		}
-
-		$redirect_arg = array( 'startcheckout' => 'true' );
-		$redirect     = add_query_arg( $redirect_arg );
-
-		$checkout_logo = 'https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-' . $settings->buttonSize . '.png';
-		$credit_logo   = 'https://www.paypalobjects.com/webstatic/en_US/i/buttons/ppcredit-logo-' . $settings->buttonSize . '.png';
 		?>
-		<div class="<?php echo esc_attr( $class ); ?>">
-			<span style="float: right;">
-				<a href="<?php echo esc_url( $redirect ); ?>" id="woo_pp_ec_button">
-					<?php if ( ! $settings->enableInContextCheckout ) : ?>
-						<img src="<?php echo esc_url( $checkout_logo ); ?>" alt="<?php _e( 'Check out with PayPal', 'woocommerce-gateway-paypal-express-checkout' ); ?>" style="width: auto; height: auto;">
-					<?php endif; ?>
-				</a>
-			</span>
+		<div class="wcppec-checkout-buttons woo_pp_cart_buttons_div">
 
-			<? /* defer ppc for next release.
-			<?php if ( $settings->ppcEnabled && 'US' === WC()->countries->get_base_country() ) : ?>
-				<?php
-				$redirect = add_query_arg( array( 'use-ppc' => 'true' ), $redirect );
-				?>
-				<span style="float: right; padding-right: 5px;">
-
-					<a href="<?php echo esc_url( $redirect ); ?>" id="woo_pp_ppc_button">
-						<img src="<?php echo esc_url( $credit_logo ); ?>" alt="<?php _e( 'Pay with PayPal Credit', 'woocommerce-gateway-paypal-express-checkout' ); ?>" style="width: auto; height: auto;">
-					</a>
-				</span>
+			<?php if ( has_action( 'woocommerce_proceed_to_checkout', 'woocommerce_button_proceed_to_checkout' ) ) : ?>
+				<div class="wcppec-checkout-buttons__separator">
+					<?php _e( '&mdash; or &mdash;', 'woocommerce-gateway-paypal-express-checkout' ); ?>
+				</div>
 			<?php endif; ?>
-			*/ ?>
-		</div>
 
+			<a href="<?php echo esc_url( add_query_arg( array( 'startcheckout' => 'true' ), wc_get_page_permalink( 'cart' ) ) ); ?>" id="woo_pp_ec_button" class="wcppec-checkout-buttons__button">
+				<img src="<?php echo esc_url( 'https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-' . $settings->button_size . '.png' ); ?>" alt="<?php _e( 'Check out with PayPal', 'woocommerce-gateway-paypal-express-checkout' ); ?>" style="width: auto; height: auto;">
+			</a>
+		</div>
 		<?php
-		if ( $settings->enableInContextCheckout ) {
-			$payer_id = $api_credentials->get_payer_id();
-			$setup_args = array(
-				// 'button' => array( 'woo_pp_ec_button', 'woo_pp_ppc_button' ),
-				'buttons' => array(
-					array(
-						'container' => 'woo_pp_ec_button',
-						'size'      => $settings->buttonSize,
-						'shape'     => 'rect',
-					)
-				),
-				'locale' => $settings->get_paypal_locale(),
-			);
-			?>
-			<script type="text/javascript">
-				window.paypalCheckoutReady = function() {
-					paypal.checkout.setup( <?php echo json_encode( $payer_id ); ?>, <?php echo json_encode( $setup_args ); ?> );
-				}
-			</script>
-			<?php
-		}
 	}
 
+	/**
+	 * Display paypal button on the cart widget
+	 */
+	public function display_mini_paypal_button() {
+		$gateways = WC()->payment_gateways->get_available_payment_gateways();
+		$settings = wc_gateway_ppec()->settings;
+
+		if ( ! isset( $gateways['ppec_paypal'] ) ) {
+			return;
+		}
+		?>
+		<a href="<?php echo esc_url( add_query_arg( array( 'startcheckout' => 'true' ), wc_get_page_permalink( 'cart' ) ) ); ?>" id="woo_pp_ec_button" class="wcppec-cart-widget-button">
+			<img src="<?php echo esc_url( 'https://www.paypalobjects.com/webstatic/en_US/i/btn/png/gold-rect-paypalcheckout-26px.png' ); ?>" alt="<?php _e( 'Check out with PayPal', 'woocommerce-gateway-paypal-express-checkout' ); ?>" style="width: auto; height: auto;">
+		</a>
+		<?php
+	}
+
+	/**
+	 * Frontend scripts
+	 */
 	public function enqueue_scripts() {
-		if ( ! is_cart() ) {
-			return;
-		}
+		$settings = wc_gateway_ppec()->settings;
+		$client   = wc_gateway_ppec()->client;
 
-		$settings = wc_gateway_ppec()->settings->loadSettings();
-		if ( ! $settings->enabled ) {
-			return;
-		}
-
-		$api_credentials = $settings->getActiveApiCredentials();
-		if ( ! is_callable( array( $api_credentials, 'get_payer_id' ) ) ) {
+		if ( ! $client->get_payer_id() ) {
 			return;
 		}
 
 		wp_enqueue_style( 'wc-gateway-ppec-frontend-cart', wc_gateway_ppec()->plugin_url . 'assets/css/wc-gateway-ppec-frontend-cart.css' );
 
-		if ( $settings->enableInContextCheckout ) {
-			wp_enqueue_script( 'paypal-checkout-js', 'https://www.paypalobjects.com/api/checkout.js', array(), null, true );
+		if ( is_cart() ) {
+			wp_enqueue_script( 'paypal-checkout-js', 'https://www.paypalobjects.com/api/checkout.js', array(), '1.0', true );
+			wp_enqueue_script( 'wc-gateway-ppec-frontend-in-context-checkout', wc_gateway_ppec()->plugin_url . 'assets/js/wc-gateway-ppec-frontend-in-context-checkout.js', array( 'jquery' ), wc_gateway_ppec()->version, true );
+			wp_localize_script( 'wc-gateway-ppec-frontend-in-context-checkout', 'wc_ppec_context',
+				array(
+					'payer_id'    => $client->get_payer_id(),
+					'environment' => $settings->get_environment(),
+					'locale'      => $settings->get_paypal_locale(),
+					'start_flow'  => esc_url( add_query_arg( array( 'startcheckout' => 'true' ), wc_get_page_permalink( 'cart' ) ) ),
+				)
+			);
 		}
 	}
 
@@ -194,10 +168,7 @@ class WC_Gateway_PPEC_Cart_Handler {
 		// if they do not match, check to see what the merchant would like to do
 		// options are to remove line items or add a line item to adjust for the difference
 		if ( $this->totalItemAmount != $roundedPayPalTotal ) {
-			$settings         = wc_gateway_ppec()->settings->loadSettings();
-			$subtotalBehavior = $settings->subtotalMismatchBehavior;
-
-			if ( WC_Gateway_PPEC_Settings::subtotalMismatchBehaviorAddLineItem == $subtotalBehavior ) {
+			if ( 'add' === wc_gateway_ppec()->settings->get_subtotal_mismatch_behavior() ) {
 				// ...
 				// Add line item to make up different between WooCommerce calculations and PayPal calculations
 				$cartItemAmountDifference = $this->totalItemAmount - $roundedPayPalTotal;
@@ -213,7 +184,7 @@ class WC_Gateway_PPEC_Cart_Handler {
 				$this->totalItemAmount += $modifyLineItem[ 'amount' ];
 				$this->orderTotal += $modifyLineItem[ 'amount' ];
 
-			} elseif ( WC_Gateway_PPEC_Settings::subtotalMismatchBehaviorDropLineItems == $subtotalBehavior ) {
+			} else {
 				// ...
 				// Omit line items altogether
 				unset($this->items);
@@ -223,55 +194,12 @@ class WC_Gateway_PPEC_Cart_Handler {
 
 		// enter discount shenanigans. item total cannot be 0 so make modifications accordingly
 		if ( $this->totalItemAmount == $discounts ) {
-			$settings = wc_gateway_ppec()->settings->loadSettings();
-			$behavior = $settings->zeroSubtotalBehavior;
-
-			if ( WC_Gateway_PPEC_Settings::zeroSubtotalBehaviorModifyItems == $behavior ) {
-				// ...
-				// Go ahead and pass the discounts with the cart, but then add in a 0.01 line
-				// item and add a 0.01 shipping discount.
-				$discountLineItem = array(
-					'name'        => 'Discount',
-					'description' => 'Discount Amount',
-					'quantity'    => 1,
-					'amount'      => -$discounts
-				);
-
-				$this->items[] = $discountLineItem;
-
-				if ( $is_zdp_currency ) {
-					$discount = 1;
-				} else {
-					$discount = 0.01;
-				}
-
-				$modifyLineItem = array(
-					'name'          => 'Discount Offset',
-					'description'   => 'Amount Discounted in Shipping',
-					'quantity'      => 1,
-					'amount'        => $discount
-				);
-
-				$this->items[] = $modifyLineItem;
-				$this->shipDiscountAmount = -$discount;
-				$this->totalItemAmount = $this->totalItemAmount - $discounts + $discount;
-				$this->orderTotal -= $discounts;
-
-			} elseif ( WC_Gateway_PPEC_Settings::zeroSubtotalBehaviorOmitLineItems == $behavior ) {
-				// ...
-				// Omit line items altogether
-				unset($this->items);
-				$this->shipDiscountAmount = 0;
-				$this->totalItemAmount -= $discounts;
-				$this->orderTotal -= $discounts;
-
-			} else {
-				// ...
-				// Increase SHIPDISCAMT by the amount of all the coupons in the cart
-				$this->shipDiscountAmount = -$discounts;
-				$this->orderTotal -= $discounts;
-
-			}
+			// ...
+			// Omit line items altogether
+			unset($this->items);
+			$this->shipDiscountAmount = 0;
+			$this->totalItemAmount -= $discounts;
+			$this->orderTotal -= $discounts;
 		} else {
 			// Build PayPal_Cart object as normal
 			if ( $discounts > 0 ) {
@@ -289,7 +217,7 @@ class WC_Gateway_PPEC_Cart_Handler {
 			$this->totalItemAmount -= $discounts;
 			$this->orderTotal -= $discounts;
 		}
-		
+
 		// If the totals don't line up, adjust the tax to make it work (cause it's probably a tax mismatch).
 		$wooOrderTotal = round( WC()->cart->total, $decimals );
 		if( $wooOrderTotal != $this->orderTotal ) {
@@ -306,9 +234,9 @@ class WC_Gateway_PPEC_Cart_Handler {
 		$this->custom = '';
 		$this->invoiceNumber = '';
 
-		if ( ! is_numeric( $this->shipping ) )
+		if ( ! is_numeric( $this->shipping ) ) {
 			$this->shipping = 0;
-		
+		}
 	}
 
 	public function loadOrderDetails( $order_id ) {
@@ -337,7 +265,7 @@ class WC_Gateway_PPEC_Cart_Handler {
 			);
 
 			$this->items[] = $item;
-			
+
 			$roundedPayPalTotal += round( $amount * $values['qty'], $decimals );
 		}
 
@@ -353,10 +281,7 @@ class WC_Gateway_PPEC_Cart_Handler {
 		// if they do not match, check to see what the merchant would like to do
 		// options are to remove line items or add a line item to adjust for the difference
 		if ( $this->totalItemAmount != $roundedPayPalTotal ) {
-			$settings         = wc_gateway_ppec()->settings->loadSettings();
-			$subtotalBehavior = $settings->subtotalMismatchBehavior;
-
-			if ( WC_Gateway_PPEC_Settings::subtotalMismatchBehaviorAddLineItem == $subtotalBehavior ) {
+			if ( 'add' === wc_gateway_ppec()->settings->get_subtotal_mismatch_behavior() ) {
 				// ...
 				// Add line item to make up different between WooCommerce calculations and PayPal calculations
 				$cartItemAmountDifference = $this->totalItemAmount - $roundedPayPalTotal;
@@ -370,7 +295,7 @@ class WC_Gateway_PPEC_Cart_Handler {
 
 				$this->items[] = $modifyLineItem;
 
-			} elseif ( WC_Gateway_PPEC_Settings::subtotalMismatchBehaviorDropLineItems == $subtotalBehavior ) {
+			} else {
 				// ...
 				// Omit line items altogether
 				unset($this->items);
@@ -380,54 +305,11 @@ class WC_Gateway_PPEC_Cart_Handler {
 
 		// enter discount shenanigans. item total cannot be 0 so make modifications accordingly
 		if ( $this->totalItemAmount == $discounts ) {
-			$settings = wc_gateway_ppec()->settings->loadSettings();
-			$behavior = $settings->zeroSubtotalBehavior;
-
-			if ( WC_Gateway_PPEC_Settings::zeroSubtotalBehaviorModifyItems == $behavior ) {
-				// ...
-				// Go ahead and pass the discounts with the cart, but then add in a 0.01 line
-				// item and add a 0.01 shipping discount.
-				$discountLineItem = array(
-					'name'        => 'Discount',
-					'description' => 'Discount Amount',
-					'quantity'    => 1,
-					'amount'      => -$discounts
-				);
-
-				$this->items[] = $discountLineItem;
-
-				if ( $is_zdp_currency ) {
-					$discount = 1;
-				} else {
-					$discount = 0.01;
-				}
-
-				$modifyLineItem = array(
-					'name'          => 'Discount Offset',
-					'description'   => 'Amount Discounted in Shipping',
-					'quantity'      => 1,
-					'amount'        => $discount
-				);
-
-				$this->items[] = $modifyLineItem;
-				$this->shipDiscountAmount = -$discount;
-				$this->totalItemAmount = $this->totalItemAmount - $discounts + $discount;
-				$this->orderTotal -= $discounts;
-
-			} elseif ( WC_Gateway_PPEC_Settings::zeroSubtotalBehaviorOmitLineItems == $behavior ) {
-				// ...
-				// Omit line items altogether
-				unset($this->items);
-				$this->shipDiscountAmount = 0;
-				$this->totalItemAmount -= $discounts;
-				$this->orderTotal -= $discounts;
-
-			} else {
-				// ...
-				// Increase SHIPDISCAMT by the amount of all the coupons in the cart
-				$this->shipDiscountAmount = -$discounts;
-				$this->orderTotal -= $discounts;
-			}
+			// Omit line items altogether
+			unset($this->items);
+			$this->shipDiscountAmount = 0;
+			$this->totalItemAmount -= $discounts;
+			$this->orderTotal -= $discounts;
 		} else {
 			// Build PayPal_Cart object as normal
 			if ( $discounts > 0 ) {
@@ -445,7 +327,7 @@ class WC_Gateway_PPEC_Cart_Handler {
 
 			$this->shipDiscountAmount = 0;
 		}
-		
+
 		// If the totals don't line up, adjust the tax to make it work (cause it's probably a tax mismatch).
 		$wooOrderTotal = round( $order->get_total(), $decimals );
 		if( $wooOrderTotal != $this->orderTotal ) {
@@ -462,24 +344,24 @@ class WC_Gateway_PPEC_Cart_Handler {
 		$this->custom = '';
 		$this->invoiceNumber = '';
 
-		if ( ! is_numeric( $this->shipping ) )
+		if ( ! is_numeric( $this->shipping ) ) {
 			$this->shipping = 0;
-
+		}
 	}
 
 	public function setECParams() {
-
 		$stdParams = array (
-			'PAYMENTREQUEST_0_AMT' => $this->orderTotal,
+			'PAYMENTREQUEST_0_AMT'          => $this->orderTotal,
 			'PAYMENTREQUEST_0_CURRENCYCODE' => $this->currency,
-			'PAYMENTREQUEST_0_ITEMAMT' => $this->totalItemAmount,
-			'PAYMENTREQUEST_0_SHIPPINGAMT' => $this->shipping,
+			'PAYMENTREQUEST_0_ITEMAMT'      => $this->totalItemAmount,
+			'PAYMENTREQUEST_0_SHIPPINGAMT'  => $this->shipping,
 			'PAYMENTREQUEST_0_INSURANCEAMT' => $this->insurance,
-			'PAYMENTREQUEST_0_HANDLINGAMT' => $this->handling,
-			'PAYMENTREQUEST_0_TAXAMT' => $this->orderTax,
-			'PAYMENTREQUEST_0_CUSTOM' => $this->custom,
-			'PAYMENTREQUEST_0_INVNUM' => $this->invoiceNumber,
-			'PAYMENTREQUEST_0_SHIPDISCAMT' => $this->shipDiscountAmount
+			'PAYMENTREQUEST_0_HANDLINGAMT'  => $this->handling,
+			'PAYMENTREQUEST_0_TAXAMT'       => $this->orderTax,
+			'PAYMENTREQUEST_0_CUSTOM'       => $this->custom,
+			'PAYMENTREQUEST_0_INVNUM'       => $this->invoiceNumber,
+			'PAYMENTREQUEST_0_SHIPDISCAMT'  => $this->shipDiscountAmount,
+			'NOSHIPPING'                    => WC()->cart->needs_shipping() ? 0 : 1,
 		);
 
 		if ( ! empty( $this->items ) ) {
@@ -488,8 +370,8 @@ class WC_Gateway_PPEC_Cart_Handler {
 				$lineItemParams = array(
 					'L_PAYMENTREQUEST_0_NAME' . $count => $values['name'],
 					'L_PAYMENTREQUEST_0_DESC' . $count => ! empty( $values['description'] ) ? strip_tags( $values['description'] ) : '',
-					'L_PAYMENTREQUEST_0_QTY' . $count => $values['quantity'],
-					'L_PAYMENTREQUEST_0_AMT' . $count => $values['amount']
+					'L_PAYMENTREQUEST_0_QTY' . $count  => $values['quantity'],
+					'L_PAYMENTREQUEST_0_AMT' . $count  => $values['amount']
 				);
 
 				$stdParams = array_merge( $stdParams, $lineItemParams );
