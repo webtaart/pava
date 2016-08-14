@@ -3,7 +3,7 @@ Contributors: automattic, woothemes, akeda, dwainm, royho, allendav, slash1andy,
 Tags: ecommerce, e-commerce, commerce, woothemes, wordpress ecommerce, store, sales, sell, shop, shopping, cart, checkout, configurable, paypal
 Requires at least: 4.4
 Tested up to: 4.4
-Stable tag: 1.1.1
+Stable tag: 1.0.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -56,7 +56,7 @@ Yes it does - production and sandbox mode is driven by how you connect.  You may
 
 = Where can I find documentation? =
 
-For help setting up and configuring, please refer to our [user guide](https://docs.woocommerce.com/document/paypal-express-checkout/)
+For help setting up and configuring, please refer to our [user guide](https://www.woothemes.com/products/woocommerce-gateway-paypal-express-checkout/)
 
 = Where can I get support or talk to other users? =
 
@@ -64,18 +64,13 @@ If you get stuck, you can ask for help in the Plugin Forum.
 
 = Will this plugin work with my theme? =
 
-Yes, this plugin will work with any theme, but may require some styling to make it match nicely. If you're
+Yes, this plugin will work with any theme, but may require some styling to make it match nicely. Please see
+our [codex](http://docs.woothemes.com/documentation/plugins/woocommerce/woocommerce-codex/) for help. If you're
 looking for a theme with built in WooCommerce integration we recommend [Storefront](http://www.woothemes.com/storefront/).
 
 = Where can I request new features or report bugs? =
 
 New feature requests and bugs reports can be made in the plugin forum.
-
-= How to remove 'Proceed to Checkout' button from cart page? =
-
-If PayPal Express Checkout is the only enabled payment gateway and you want to remove the 'Proceed to Checkout' button from the cart, you can use this snippet:
-
-https://gist.github.com/mikejolley/ad2ecc286c9ad6cefbb7065ba6dfef48
 
 == Screenshots ==
 
@@ -85,38 +80,26 @@ https://gist.github.com/mikejolley/ad2ecc286c9ad6cefbb7065ba6dfef48
 
 == Changelog ==
 
-= 1.1.1 =
-* Fixed fatal error prior to PHP 5.5 caused by passing empty() a non-variables.
-
-= 1.1.0 =
-* Improved flow after express checkout by removing billing and shipping fields and simply allowing shipping method selection.
-* Fix - Fixed in-context checkout to work after ajax cart reload.
-* Fix - Added missing 'large' button size.
-* Fix - Prevent double stock reduction when payment complete.
-* Fix - Allow PPE from pay page and don't use in-context checkout for PayPal Mark on checkout.
-* Fix - Increase timeout to 30 to prevent error #3.
-* Tweak - If the store owner decides to enable PayPal standard, respect that decision and remove EC from checkout screen.
-* Tweak - Change place order button to "continue to payment".
-* Tweak - Moved default button location to woocommerce_proceed_to_checkout hook.
-* Tweak - Improved button appearance and look alongside regular checkout button.
-
 = 1.0.4 =
+
 * Fix - Wrong section slug / tab after redirected from connect.woocommerce.com
 * Fix - Make sure to check if credentials were set in cart and checkout pages
 * Fix - Removed configuration of chipers to use for TLS
 
 = 1.0.3 =
+
 * Fix - Issue where missing rounding two decimal digits of tax causing transaction being refused
 * Fix - Issue where custom logo image URL is not saved
 
-= 1.0.2 =
+= 1.0.2
+
 * Fix - Strip out HTML tags from item descriptions to prevent warning from PayPal
 * Fix - Issue of incorrect plugin's setting link from admin plugins page when using WooCommerce 2.6
 * Tweak - Make enabled option to default to true
 * Fix - Issue of missing help icon when plugin directory is not the same as plugin's slug.
 * Tweak - Add admin notice to setup / connect after plugin is activated.
 
-= 1.0.1 =
+= 1.0.1
 * Fix - Make sure OpenSSL is installed with 1.0.1 as the minium required version, otherwise display warning
 * Fix - Make sure cURL transport is available for WP HTTP API, otherwise display warning
 * Fix - Unhandled certificate-style API credential

@@ -1,0 +1,618 @@
+0000.001 (0) Opened log file at time: Sat, 13 Aug 2016 12:10:25 +0000 on http://dev-pava.pantheonsite.io
+0000.007 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.12.17 WP: 4.5.3 PHP: 5.5.24 (Linux endpointa66fd9d5.chios.panth.io 4.4.6-200.fc22.x86_64 #1 SMP Wed Mar 16 22:13:40 UTC 2016 x86_64) MySQL: 5.5.5 WPLANG: nl_NL Server: nginx/1.8.1 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 15M | 15.5M) multisite: N openssl: OpenSSL 1.0.1k-fips 8 Jan 2015 mcrypt: Y LANG:  ZipArchive::addFile: Y
+0000.010 (0) Free space on disk containing Updraft's temporary directory: 155229.5 MB
+0000.014 (0) Tasks: Backup files: 1 (schedule: twicedaily) Backup DB:  (schedule: twicedaily)
+0000.017 (0) Processed schedules. Combining jobs from identical schedules. Tasks now: Backup files: 1 Backup DB: 1
+0000.028 (0) Requesting semaphore lock (fd) (apparently via scheduler: last_scheduled_action_called_at=1471078045, seconds_ago=12180)
+0000.037 (0) Set semaphore last lock (fd) time to 2016-08-13 12:10:25
+0000.040 (0) Semaphore lock (fd) complete
+0000.050 (0) Backup run: resumption=0, nonce=51a9d9b4b5a5, begun at=1471090225 (0s ago), job type=backup
+0000.055 (0) Scheduling a resumption (1) after 300 seconds (1471090525) in case this run gets aborted
+0000.076 (0) Checking if we have a zip executable available
+0000.079 (0) Testing: /usr/bin/zip
+0000.090 (0) Output: zip warning: binziptest/test.zip not found or empty
+0000.093 (0) Output: adding: binziptest/subdir1/	(in=0) (out=0) (stored 0%)
+0000.097 (0) Output: adding: binziptest/subdir1/subdir2/	(in=0) (out=0) (stored 0%)
+0000.099 (0) Output: adding: binziptest/subdir1/subdir2/test.html	(in=131) (out=107) (deflated 18%)
+0000.102 (0) Output: total bytes=131, compressed=107 -> 18% savings
+0000.115 (0) Output: adding: binziptest/subdir1/subdir2/test2.html	(in=138) (out=113) (deflated 18%)
+0000.118 (0) Output: total bytes=269, compressed=220 -> 18% savings
+0000.139 (0) Working binary zip found: /usr/bin/zip
+0000.145 (0) Zip engine: found/will use a binary zip: /usr/bin/zip
+0000.147 (0) Creation of backups of directories: beginning
+0000.157 (0) Beginning creation of dump of plugins (split every: 400 MB)
+0000.333 (0) Total entities for the zip file: 744 directories, 4237 files (0 skipped as non-modified), 71.6 MB
+0000.341 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 100 files added (on-disk size: 0 KB)
+0000.347 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 200 files added (on-disk size: 0 KB)
+0000.353 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 300 files added (on-disk size: 0 KB)
+0000.359 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 400 files added (on-disk size: 0 KB)
+0000.365 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 500 files added (on-disk size: 0 KB)
+0000.368 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (9.3 MB, 4237 files batched, 501 (501) added so far); re-opening (prior size: 0 KB)
+0000.953 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: size is now: 3.00 MB
+0000.963 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 600 files added (on-disk size: 3064.2 KB)
+0000.969 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 700 files added (on-disk size: 3064.2 KB)
+0000.975 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 800 files added (on-disk size: 3064.2 KB)
+0000.981 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 900 files added (on-disk size: 3064.2 KB)
+0000.987 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 1000 files added (on-disk size: 3064.2 KB)
+0000.989 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (2.8 MB, 4237 files batched, 501 (1002) added so far); re-opening (prior size: 3064.2 KB)
+0001.293 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: size is now: 4.00 MB
+0001.303 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 1100 files added (on-disk size: 4103.4 KB)
+0001.309 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 1200 files added (on-disk size: 4103.4 KB)
+0001.314 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 1300 files added (on-disk size: 4103.4 KB)
+0001.320 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 1400 files added (on-disk size: 4103.4 KB)
+0001.325 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 1500 files added (on-disk size: 4103.4 KB)
+0001.327 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (12 MB, 4237 files batched, 501 (1503) added so far); re-opening (prior size: 4103.4 KB)
+0002.208 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: size is now: 7.80 MB
+0002.218 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 1600 files added (on-disk size: 7943.7 KB)
+0002.223 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 1700 files added (on-disk size: 7943.7 KB)
+0002.229 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 1800 files added (on-disk size: 7943.7 KB)
+0002.235 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 1900 files added (on-disk size: 7943.7 KB)
+0002.240 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 2000 files added (on-disk size: 7943.7 KB)
+0002.243 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (6.3 MB, 4237 files batched, 501 (2004) added so far); re-opening (prior size: 7943.7 KB)
+0002.713 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: size is now: 11.00 MB
+0002.728 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 2100 files added (on-disk size: 11260.2 KB)
+0002.734 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 2200 files added (on-disk size: 11260.2 KB)
+0002.740 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 2300 files added (on-disk size: 11260.2 KB)
+0002.745 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 2400 files added (on-disk size: 11260.2 KB)
+0002.751 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 2500 files added (on-disk size: 11260.2 KB)
+0002.754 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (7.4 MB, 4237 files batched, 501 (2505) added so far); re-opening (prior size: 11260.2 KB)
+0003.287 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: size is now: 14.60 MB
+0003.298 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 2600 files added (on-disk size: 14929.7 KB)
+0003.304 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 2700 files added (on-disk size: 14929.7 KB)
+0003.311 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 2800 files added (on-disk size: 14929.7 KB)
+0003.317 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 2900 files added (on-disk size: 14929.7 KB)
+0003.322 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 3000 files added (on-disk size: 14929.7 KB)
+0003.325 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (7.6 MB, 4237 files batched, 501 (3006) added so far); re-opening (prior size: 14929.7 KB)
+0003.955 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: size is now: 17.60 MB
+0003.966 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 3100 files added (on-disk size: 17981.5 KB)
+0003.971 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 3200 files added (on-disk size: 17981.5 KB)
+0003.977 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 3300 files added (on-disk size: 17981.5 KB)
+0003.983 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 3400 files added (on-disk size: 17981.5 KB)
+0003.988 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 3500 files added (on-disk size: 17981.5 KB)
+0003.991 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (5.4 MB, 4237 files batched, 501 (3507) added so far); re-opening (prior size: 17981.5 KB)
+0004.370 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 3600 files added (on-disk size: 19370.7 KB)
+0004.375 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 3700 files added (on-disk size: 19370.7 KB)
+0004.382 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 3800 files added (on-disk size: 19370.7 KB)
+0004.393 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 3900 files added (on-disk size: 19370.7 KB)
+0004.414 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 4000 files added (on-disk size: 19370.7 KB)
+0004.417 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (6.8 MB, 4237 files batched, 501 (4008) added so far); re-opening (prior size: 19370.7 KB)
+0004.973 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 4100 files added (on-disk size: 21953 KB)
+0004.979 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: 4200 files added (on-disk size: 21953 KB)
+0005.873 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip.tmp: size is now: 26.00 MB
+0005.997 (0) Created plugins zip (0) - 26592.5 KB in 5.8 s (4556.3 KB/s) (SHA1 checksum: 446b7206d282da47d659e94fff71082da7a80367)
+0006.003 (0) Beginning creation of dump of themes (split every: 400 MB)
+0006.038 (0) Total entities for the zip file: 151 directories, 996 files (0 skipped as non-modified), 21 MB
+0006.045 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-themes.zip.tmp: 100 files added (on-disk size: 0 KB)
+0006.051 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-themes.zip.tmp: 200 files added (on-disk size: 0 KB)
+0006.056 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-themes.zip.tmp: 300 files added (on-disk size: 0 KB)
+0006.062 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-themes.zip.tmp: 400 files added (on-disk size: 0 KB)
+0006.068 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-themes.zip.tmp: 500 files added (on-disk size: 0 KB)
+0006.071 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (13.3 MB, 996 files batched, 501 (501) added so far); re-opening (prior size: 0 KB)
+0006.504 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-themes.zip.tmp: size is now: 11.10 MB
+0006.515 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-themes.zip.tmp: 600 files added (on-disk size: 11399.8 KB)
+0006.520 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-themes.zip.tmp: 700 files added (on-disk size: 11399.8 KB)
+0006.526 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-themes.zip.tmp: 800 files added (on-disk size: 11399.8 KB)
+0006.533 (0) Zip: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-themes.zip.tmp: 900 files added (on-disk size: 11399.8 KB)
+0007.012 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-themes.zip.tmp: size is now: 16.30 MB
+0007.108 (0) Created themes zip (0) - 16698.6 KB in 1.1 s (15154.7 KB/s) (SHA1 checksum: 4e76d1ed4e532b3dc0c9816ea5cf824121c8f4d0)
+0007.122 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone,snapshots
+0007.125 (0) Looking for candidates to back up in: /srv/bindings/90613038c8d64a778b535108be9048a0/code/wp-content/uploads
+0007.152 (0) finding files: 2016: adding to list (1)
+0007.157 (0) finding files: backup-guard: skipping: excluded by options (glob)
+0007.161 (0) finding files: espresso: adding to list (2)
+0007.165 (0) finding files: sg_symlinks: adding to list (3)
+0007.168 (0) finding files: siteorigin-widgets: adding to list (4)
+0007.172 (0) finding files: wc-logs: adding to list (5)
+0007.175 (0) finding files: woocommerce_uploads: adding to list (6)
+0007.179 (0) Beginning creation of dump of uploads (split every: 400 MB)
+0007.495 (0) Total entities for the zip file: 13 directories, 92 files (0 skipped as non-modified), 35.5 MB
+0007.499 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/Joost-150x150.jpg add_as=uploads/2016/07/Joost-150x150.jpg
+0007.499 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/Joost-150x150.png add_as=uploads/2016/07/Joost-150x150.png
+0007.499 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/Joost-180x180.png add_as=uploads/2016/07/Joost-180x180.png
+0007.499 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/Joost-200x300.jpg add_as=uploads/2016/07/Joost-200x300.jpg
+0007.499 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/Joost-200x300.png add_as=uploads/2016/07/Joost-200x300.png
+0007.499 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/Joost-272x182.png add_as=uploads/2016/07/Joost-272x182.png
+0007.499 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/Joost-300x300.png add_as=uploads/2016/07/Joost-300x300.png
+0007.499 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/Joost-600x600.png add_as=uploads/2016/07/Joost-600x600.png
+0007.499 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/Joost-683x1024.png add_as=uploads/2016/07/Joost-683x1024.png
+0007.499 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/Joost-768x1152.png add_as=uploads/2016/07/Joost-768x1152.png
+0007.500 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/Joost.png add_as=uploads/2016/07/Joost.png
+0007.500 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/PAVA-Logo-150x150.png add_as=uploads/2016/07/PAVA-Logo-150x150.png
+0007.500 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/PAVA-Logo-234x300.png add_as=uploads/2016/07/PAVA-Logo-234x300.png
+0007.500 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/PAVA-Logo-272x182.png add_as=uploads/2016/07/PAVA-Logo-272x182.png
+0007.500 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/PAVA-Logo.png add_as=uploads/2016/07/PAVA-Logo.png
+0007.500 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/PAVA_Kleur-1024x323.jpg add_as=uploads/2016/07/PAVA_Kleur-1024x323.jpg
+0007.500 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/PAVA_Kleur-1200x379.jpg add_as=uploads/2016/07/PAVA_Kleur-1200x379.jpg
+0007.500 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/PAVA_Kleur-150x150.jpg add_as=uploads/2016/07/PAVA_Kleur-150x150.jpg
+0007.500 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/PAVA_Kleur-272x182.jpg add_as=uploads/2016/07/PAVA_Kleur-272x182.jpg
+0007.500 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/PAVA_Kleur-300x95.jpg add_as=uploads/2016/07/PAVA_Kleur-300x95.jpg
+0007.500 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/PAVA_Kleur-768x243.jpg add_as=uploads/2016/07/PAVA_Kleur-768x243.jpg
+0007.500 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/PAVA_Kleur.jpg add_as=uploads/2016/07/PAVA_Kleur.jpg
+0007.500 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/Unknown-1.jpeg add_as=uploads/2016/07/Unknown-1.jpeg
+0007.500 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/Unknown.png add_as=uploads/2016/07/Unknown.png
+0007.500 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/cropped-PAVA-Logo-150x150.png add_as=uploads/2016/07/cropped-PAVA-Logo-150x150.png
+0007.500 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/cropped-PAVA-Logo-235x300.png add_as=uploads/2016/07/cropped-PAVA-Logo-235x300.png
+0007.501 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/cropped-PAVA-Logo-240x182.png add_as=uploads/2016/07/cropped-PAVA-Logo-240x182.png
+0007.501 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/cropped-PAVA-Logo.png add_as=uploads/2016/07/cropped-PAVA-Logo.png
+0007.501 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/cropped-coaching-1024x494.png add_as=uploads/2016/07/cropped-coaching-1024x494.png
+0007.501 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/cropped-coaching-1200x579.png add_as=uploads/2016/07/cropped-coaching-1200x579.png
+0007.501 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/cropped-coaching-150x150.png add_as=uploads/2016/07/cropped-coaching-150x150.png
+0007.501 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/cropped-coaching-300x145.png add_as=uploads/2016/07/cropped-coaching-300x145.png
+0007.501 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/cropped-coaching-768x371.png add_as=uploads/2016/07/cropped-coaching-768x371.png
+0007.501 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/cropped-coaching.png add_as=uploads/2016/07/cropped-coaching.png
+0007.501 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/cropped-favicon-150x150.png add_as=uploads/2016/07/cropped-favicon-150x150.png
+0007.501 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/cropped-favicon-180x180.png add_as=uploads/2016/07/cropped-favicon-180x180.png
+0007.501 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/cropped-favicon-192x192.png add_as=uploads/2016/07/cropped-favicon-192x192.png
+0007.501 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/cropped-favicon-270x270.png add_as=uploads/2016/07/cropped-favicon-270x270.png
+0007.501 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/cropped-favicon-272x182.png add_as=uploads/2016/07/cropped-favicon-272x182.png
+0007.501 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/cropped-favicon-300x300.png add_as=uploads/2016/07/cropped-favicon-300x300.png
+0007.501 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/cropped-favicon-32x32.png add_as=uploads/2016/07/cropped-favicon-32x32.png
+0007.501 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/cropped-favicon.png add_as=uploads/2016/07/cropped-favicon.png
+0007.501 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/favicon-150x150.png add_as=uploads/2016/07/favicon-150x150.png
+0007.501 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/favicon-272x182.png add_as=uploads/2016/07/favicon-272x182.png
+0007.501 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/favicon-300x300.png add_as=uploads/2016/07/favicon-300x300.png
+0007.502 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/favicon.png add_as=uploads/2016/07/favicon.png
+0007.502 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/hard-cover-top-7-1014x1024.png add_as=uploads/2016/07/hard-cover-top-7-1014x1024.png
+0007.502 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/hard-cover-top-7-1200x1212.png add_as=uploads/2016/07/hard-cover-top-7-1200x1212.png
+0007.502 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/hard-cover-top-7-150x150.png add_as=uploads/2016/07/hard-cover-top-7-150x150.png
+0007.502 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/hard-cover-top-7-272x182.png add_as=uploads/2016/07/hard-cover-top-7-272x182.png
+0007.502 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/hard-cover-top-7-297x300.png add_as=uploads/2016/07/hard-cover-top-7-297x300.png
+0007.502 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/hard-cover-top-7-768x776.png add_as=uploads/2016/07/hard-cover-top-7-768x776.png
+0007.502 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/hard-cover-top-7.png add_as=uploads/2016/07/hard-cover-top-7.png
+0007.502 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/pattern-black-150x150.png add_as=uploads/2016/07/pattern-black-150x150.png
+0007.502 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/pattern-black-272x182.png add_as=uploads/2016/07/pattern-black-272x182.png
+0007.502 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/pattern-black-300x260.png add_as=uploads/2016/07/pattern-black-300x260.png
+0007.502 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/pattern-black.png add_as=uploads/2016/07/pattern-black.png
+0007.502 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/top-book-1024x683.png add_as=uploads/2016/07/top-book-1024x683.png
+0007.502 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/top-book-1200x800.png add_as=uploads/2016/07/top-book-1200x800.png
+0007.502 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/top-book-150x150.png add_as=uploads/2016/07/top-book-150x150.png
+0007.502 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/top-book-272x182.png add_as=uploads/2016/07/top-book-272x182.png
+0007.502 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/top-book-300x200.png add_as=uploads/2016/07/top-book-300x200.png
+0007.502 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/top-book-768x512.png add_as=uploads/2016/07/top-book-768x512.png
+0007.502 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/top-book.png add_as=uploads/2016/07/top-book.png
+0007.503 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/two-books-1024x683.png add_as=uploads/2016/07/two-books-1024x683.png
+0007.503 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 25 MB added on this batch (25 MB, 92 files batched, 65 (65) added so far); re-opening (prior size: 0 KB)
+0007.513 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-uploads.zip.tmp: size is now: 0.00 MB
+0007.520 (0) A useful amount of data was added after this amount of zip processing: 0.8 s (normalised: 0.8 s, rate: 31491.4 KB/s)
+0007.526 (0) Performance is good - will increase the amount of data we attempt to batch (time=0.81420707702637, normalised_time=0.81291958635764, max_time=-1, data points known=0, old_max_bytes=26214400, new_max_bytes=193483344)
+0007.532 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/two-books-1200x800.png add_as=uploads/2016/07/two-books-1200x800.png
+0007.532 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/two-books-150x150.png add_as=uploads/2016/07/two-books-150x150.png
+0007.532 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/two-books-272x182.png add_as=uploads/2016/07/two-books-272x182.png
+0007.532 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/two-books-300x200.png add_as=uploads/2016/07/two-books-300x200.png
+0007.532 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/two-books-768x512.png add_as=uploads/2016/07/two-books-768x512.png
+0007.532 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/2016/07/two-books.png add_as=uploads/2016/07/two-books.png
+0007.532 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/espresso/css/index.php add_as=uploads/espresso/css/index.php
+0007.532 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/espresso/gateways/index.php add_as=uploads/espresso/gateways/index.php
+0007.532 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/espresso/index.php add_as=uploads/espresso/index.php
+0007.532 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/espresso/logs/.htaccess add_as=uploads/espresso/logs/.htaccess
+0007.532 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/espresso/logs/index.php add_as=uploads/espresso/logs/index.php
+0007.532 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/espresso/templates/index.php add_as=uploads/espresso/templates/index.php
+0007.532 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/espresso/tickets/index.php add_as=uploads/espresso/tickets/index.php
+0007.532 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/siteorigin-widgets/sow-button-wire-18283b058cae.css add_as=uploads/siteorigin-widgets/sow-button-wire-18283b058cae.css
+0007.532 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/siteorigin-widgets/sow-button-wire-7ae6a766eaed.css add_as=uploads/siteorigin-widgets/sow-button-wire-7ae6a766eaed.css
+0007.532 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/siteorigin-widgets/sow-features-default-679f40d4673f.css add_as=uploads/siteorigin-widgets/sow-features-default-679f40d4673f.css
+0007.533 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/siteorigin-widgets/sow-headline-default-14c4d53b8bec.css add_as=uploads/siteorigin-widgets/sow-headline-default-14c4d53b8bec.css
+0007.533 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/siteorigin-widgets/sow-headline-default-22c53ae20953.css add_as=uploads/siteorigin-widgets/sow-headline-default-22c53ae20953.css
+0007.533 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/siteorigin-widgets/sow-hero-default-b2d4d5896785.css add_as=uploads/siteorigin-widgets/sow-hero-default-b2d4d5896785.css
+0007.533 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/siteorigin-widgets/sow-hero-default-cbcae2711f47.css add_as=uploads/siteorigin-widgets/sow-hero-default-cbcae2711f47.css
+0007.533 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/siteorigin-widgets/sow-image-default-1c389ca87c1a.css add_as=uploads/siteorigin-widgets/sow-image-default-1c389ca87c1a.css
+0007.533 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/siteorigin-widgets/sow-image-default-46f30e3d504b.css add_as=uploads/siteorigin-widgets/sow-image-default-46f30e3d504b.css
+0007.533 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/siteorigin-widgets/sow-social-media-buttons-wire-6fe43606c1d7.css add_as=uploads/siteorigin-widgets/sow-social-media-buttons-wire-6fe43606c1d7.css
+0007.533 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/wc-logs/.htaccess add_as=uploads/wc-logs/.htaccess
+0007.533 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/wc-logs/index.html add_as=uploads/wc-logs/index.html
+0007.533 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/woocommerce_uploads/.htaccess add_as=uploads/woocommerce_uploads/.htaccess
+0007.533 (0) File skipped due to unexpected name mismatch (locale: en_US.UTF-8): file=/srv/bindings/90613038c8d64a778b535108be9048a0/files/woocommerce_uploads/index.html add_as=uploads/woocommerce_uploads/index.html
+0007.536 (0) Created uploads zip (0) - 2.2 KB in 0.4 s (6.2 KB/s) (SHA1 checksum: 56d4b9767ded3da39da3b7a50b82a232387e1042)
+0007.543 (0) Beginning backup of other directories found in the content directory (index: 0)
+0007.546 (0) Exclusion option setting (others): upgrade,cache,updraft,backup*,*backups,mysql.sql,debug.log
+0007.549 (0) Looking for candidates to back up in: /srv/bindings/90613038c8d64a778b535108be9048a0/code/wp-content
+0007.552 (0) finding files: upgrade: skipping: excluded by options
+0007.554 (0) finding files: plugins: skipping: this is the plugins directory
+0007.557 (0) finding files: uploads: skipping: this is the uploads directory
+0007.560 (0) finding files: updraft: skipping: excluded by options
+0007.564 (0) finding files: wptouch-data: adding to list (1)
+0007.567 (0) finding files: index.php: adding to list (2)
+0007.570 (0) finding files: languages: adding to list (3)
+0007.572 (0) finding files: mu-plugins: adding to list (4)
+0007.575 (0) finding files: themes: skipping: this is the themes directory
+0007.585 (0) Total entities for the zip file: 17 directories, 29 files (0 skipped as non-modified), 1.8 MB
+0007.709 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-others.zip.tmp: size is now: 0.60 MB
+0007.723 (0) Created others zip (0) - 598.9 KB in 0.1 s (4165.9 KB/s) (SHA1 checksum: 8f775dd5838156be8ff73ad3a9ae009b3151dccf)
+0007.736 (0) Saving backup status to database (elements: 8)
+0007.743 (0) Beginning creation of database dump (WordPress DB)
+0007.748 (0) Testing: /usr/bin/mysqldump
+0007.990 (0) Binary mysqldump: error (code: 2)
+0007.994 (0) Testing: /bin/mysqldump
+0008.009 (0) Binary mysqldump: error (code: 2)
+0008.043 (0) Table wp_options: Total expected rows (approximate): 910
+0008.103 (0) Table wp_options: Total rows added: 921 in 0.06 seconds
+0008.112 (0) Table wp_options: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_options.table.gz - 112.4 KB)
+0008.125 (0) Table wp_users: Total expected rows (approximate): 0
+0008.130 (0) Table wp_users: Total rows added: 2 in 0.00 seconds
+0008.134 (0) Table wp_users: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_users.table.gz - 0.7 KB)
+0008.146 (0) Table wp_usermeta: Total expected rows (approximate): 46
+0008.152 (0) Table wp_usermeta: Total rows added: 49 in 0.00 seconds
+0008.155 (0) Table wp_usermeta: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_usermeta.table.gz - 1.7 KB)
+0008.166 (0) Table wp_commentmeta: Total expected rows (approximate): 2
+0008.172 (0) Table wp_commentmeta: Total rows added: 3 in 0.00 seconds
+0008.175 (0) Table wp_commentmeta: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_commentmeta.table.gz - 0.5 KB)
+0008.185 (0) Table wp_comments: Total expected rows (approximate): 0
+0008.190 (0) Table wp_comments: Total rows added: 1 in 0.00 seconds
+0008.193 (0) Table wp_comments: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_comments.table.gz - 0.7 KB)
+0008.206 (0) Table wp_links: Total expected rows (approximate): 0
+0008.211 (0) Table wp_links: Total rows added: 0 in 0.00 seconds
+0008.214 (0) Table wp_links: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_links.table.gz - 0.4 KB)
+0008.226 (0) Table wp_pantheon_sessions: Total expected rows (approximate): 5
+0008.233 (0) Table wp_pantheon_sessions: Total rows added: 6 in 0.00 seconds
+0008.236 (0) Table wp_pantheon_sessions: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_pantheon_sessions.table.gz - 0.9 KB)
+0008.247 (0) Table wp_postmeta: Total expected rows (approximate): 447
+0008.301 (0) Table wp_postmeta: Total rows added: 465 in 0.05 seconds
+0008.305 (0) Table wp_postmeta: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_postmeta.table.gz - 46.2 KB)
+0008.317 (0) Table wp_posts: Total expected rows (approximate): 117
+0008.342 (0) Table wp_posts: Total rows added: 134 in 0.02 seconds
+0008.346 (0) Table wp_posts: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_posts.table.gz - 16.1 KB)
+0008.357 (0) Table wp_term_relationships: Total expected rows (approximate): 14
+0008.362 (0) Table wp_term_relationships: Total rows added: 16 in 0.00 seconds
+0008.365 (0) Table wp_term_relationships: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_term_relationships.table.gz - 0.4 KB)
+0008.377 (0) Table wp_term_taxonomy: Total expected rows (approximate): 13
+0008.382 (0) Table wp_term_taxonomy: Total rows added: 14 in 0.00 seconds
+0008.385 (0) Table wp_term_taxonomy: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_term_taxonomy.table.gz - 0.8 KB)
+0008.396 (0) Table wp_termmeta: Total expected rows (approximate): 0
+0008.401 (0) Table wp_termmeta: Total rows added: 1 in 0.00 seconds
+0008.403 (0) Table wp_termmeta: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_termmeta.table.gz - 0.4 KB)
+0008.414 (0) Table wp_terms: Total expected rows (approximate): 13
+0008.419 (0) Table wp_terms: Total rows added: 14 in 0.00 seconds
+0008.423 (0) Table wp_terms: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_terms.table.gz - 0.6 KB)
+0008.434 (0) Table wp_woocommerce_order_itemmeta: Total expected rows (approximate): 0
+0008.438 (0) Table wp_woocommerce_order_itemmeta: Total rows added: 0 in 0.00 seconds
+0008.440 (0) Table wp_woocommerce_order_itemmeta: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_order_itemmeta.table.gz - 0.4 KB)
+0008.453 (0) Table wp_woocommerce_payment_tokenmeta: Total expected rows (approximate): 0
+0008.458 (0) Table wp_woocommerce_payment_tokenmeta: Total rows added: 0 in 0.00 seconds
+0008.460 (0) Table wp_woocommerce_payment_tokenmeta: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_payment_tokenmeta.table.gz - 0.4 KB)
+0008.469 (0) Skipping table (lacks our prefix (wp_)): _pantheon_heartbeat
+0008.475 (0) Table wp_em_bookings: Total expected rows (approximate): 0
+0008.481 (0) Table wp_em_bookings: Total rows added: 0 in 0.00 seconds
+0008.484 (0) Table wp_em_bookings: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_em_bookings.table.gz - 0.4 KB)
+0008.493 (0) Table wp_em_events: Total expected rows (approximate): 2
+0008.500 (0) Table wp_em_events: Total rows added: 2 in 0.00 seconds
+0008.503 (0) Table wp_em_events: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_em_events.table.gz - 1.1 KB)
+0008.514 (0) Table wp_em_locations: Total expected rows (approximate): 2
+0008.519 (0) Table wp_em_locations: Total rows added: 2 in 0.00 seconds
+0008.524 (0) Table wp_em_locations: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_em_locations.table.gz - 0.6 KB)
+0008.535 (0) Table wp_em_meta: Total expected rows (approximate): 0
+0008.540 (0) Table wp_em_meta: Total rows added: 0 in 0.00 seconds
+0008.543 (0) Table wp_em_meta: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_em_meta.table.gz - 0.3 KB)
+0008.555 (0) Table wp_em_tickets: Total expected rows (approximate): 0
+0008.559 (0) Table wp_em_tickets: Total rows added: 0 in 0.00 seconds
+0008.561 (0) Table wp_em_tickets: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_em_tickets.table.gz - 0.4 KB)
+0008.572 (0) Table wp_em_tickets_bookings: Total expected rows (approximate): 0
+0008.576 (0) Table wp_em_tickets_bookings: Total rows added: 0 in 0.00 seconds
+0008.579 (0) Table wp_em_tickets_bookings: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_em_tickets_bookings.table.gz - 0.3 KB)
+0008.591 (0) Table wp_esp_answer: Total expected rows (approximate): 0
+0008.595 (0) Table wp_esp_answer: Total rows added: 0 in 0.00 seconds
+0008.597 (0) Table wp_esp_answer: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_answer.table.gz - 0.3 KB)
+0008.608 (0) Table wp_esp_attendee_meta: Total expected rows (approximate): 0
+0008.613 (0) Table wp_esp_attendee_meta: Total rows added: 0 in 0.00 seconds
+0008.616 (0) Table wp_esp_attendee_meta: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_attendee_meta.table.gz - 0.4 KB)
+0008.628 (0) Table wp_esp_checkin: Total expected rows (approximate): 0
+0008.632 (0) Table wp_esp_checkin: Total rows added: 0 in 0.00 seconds
+0008.635 (0) Table wp_esp_checkin: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_checkin.table.gz - 0.3 KB)
+0008.645 (0) Table wp_esp_country: Total expected rows (approximate): 226
+0008.663 (0) Table wp_esp_country: Total rows added: 238 in 0.02 seconds
+0008.666 (0) Table wp_esp_country: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_country.table.gz - 5.9 KB)
+0008.676 (0) Table wp_esp_currency: Total expected rows (approximate): 153
+0008.685 (0) Table wp_esp_currency: Total rows added: 153 in 0.01 seconds
+0008.688 (0) Table wp_esp_currency: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_currency.table.gz - 1.8 KB)
+0008.700 (0) Table wp_esp_currency_payment_method: Total expected rows (approximate): 153
+0008.713 (0) Table wp_esp_currency_payment_method: Total rows added: 153 in 0.00 seconds
+0008.716 (0) Table wp_esp_currency_payment_method: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_currency_payment_method.table.gz - 1.2 KB)
+0008.727 (0) Table wp_esp_datetime: Total expected rows (approximate): 1
+0008.733 (0) Table wp_esp_datetime: Total rows added: 1 in 0.00 seconds
+0008.737 (0) Table wp_esp_datetime: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_datetime.table.gz - 0.5 KB)
+0008.748 (0) Table wp_esp_datetime_ticket: Total expected rows (approximate): 2
+0008.753 (0) Table wp_esp_datetime_ticket: Total rows added: 2 in 0.00 seconds
+0008.755 (0) Table wp_esp_datetime_ticket: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_datetime_ticket.table.gz - 0.3 KB)
+0008.768 (0) Table wp_esp_event_message_template: Total expected rows (approximate): 0
+0008.773 (0) Table wp_esp_event_message_template: Total rows added: 0 in 0.00 seconds
+0008.776 (0) Table wp_esp_event_message_template: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_event_message_template.table.gz - 0.3 KB)
+0008.788 (0) Table wp_esp_event_meta: Total expected rows (approximate): 0
+0008.795 (0) Table wp_esp_event_meta: Total rows added: 1 in 0.00 seconds
+0008.798 (0) Table wp_esp_event_meta: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_event_meta.table.gz - 0.6 KB)
+0008.811 (0) Table wp_esp_event_question_group: Total expected rows (approximate): 2
+0008.819 (0) Table wp_esp_event_question_group: Total rows added: 2 in 0.00 seconds
+0008.821 (0) Table wp_esp_event_question_group: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_event_question_group.table.gz - 0.4 KB)
+0008.832 (0) Table wp_esp_event_venue: Total expected rows (approximate): 0
+0008.837 (0) Table wp_esp_event_venue: Total rows added: 1 in 0.00 seconds
+0008.841 (0) Table wp_esp_event_venue: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_event_venue.table.gz - 0.3 KB)
+0008.853 (0) Table wp_esp_extra_join: Total expected rows (approximate): 0
+0008.859 (0) Table wp_esp_extra_join: Total rows added: 0 in 0.00 seconds
+0008.862 (0) Table wp_esp_extra_join: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_extra_join.table.gz - 0.3 KB)
+0008.872 (0) Table wp_esp_extra_meta: Total expected rows (approximate): 8
+0008.878 (0) Table wp_esp_extra_meta: Total rows added: 8 in 0.00 seconds
+0008.881 (0) Table wp_esp_extra_meta: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_extra_meta.table.gz - 0.6 KB)
+0008.892 (0) Table wp_esp_line_item: Total expected rows (approximate): 8
+0008.897 (0) Table wp_esp_line_item: Total rows added: 8 in 0.00 seconds
+0008.900 (0) Table wp_esp_line_item: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_line_item.table.gz - 0.9 KB)
+0008.911 (0) Table wp_esp_log: Total expected rows (approximate): 0
+0008.915 (0) Table wp_esp_log: Total rows added: 0 in 0.00 seconds
+0008.920 (0) Table wp_esp_log: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_log.table.gz - 0.3 KB)
+0008.933 (0) Table wp_esp_message: Total expected rows (approximate): 0
+0008.938 (0) Table wp_esp_message: Total rows added: 0 in 0.00 seconds
+0008.941 (0) Table wp_esp_message: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_message.table.gz - 0.5 KB)
+0008.953 (0) Table wp_esp_message_template: Total expected rows (approximate): 48
+0008.961 (0) Table wp_esp_message_template: Total rows added: 48 in 0.01 seconds
+0008.966 (0) Table wp_esp_message_template: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_message_template.table.gz - 6.1 KB)
+0008.977 (0) Table wp_esp_message_template_group: Total expected rows (approximate): 7
+0008.981 (0) Table wp_esp_message_template_group: Total rows added: 7 in 0.00 seconds
+0008.984 (0) Table wp_esp_message_template_group: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_message_template_group.table.gz - 0.5 KB)
+0008.998 (0) Table wp_esp_payment: Total expected rows (approximate): 0
+0009.003 (0) Table wp_esp_payment: Total rows added: 0 in 0.00 seconds
+0009.006 (0) Table wp_esp_payment: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_payment.table.gz - 0.5 KB)
+0009.016 (0) Table wp_esp_payment_method: Total expected rows (approximate): 9
+0009.022 (0) Table wp_esp_payment_method: Total rows added: 10 in 0.00 seconds
+0009.025 (0) Table wp_esp_payment_method: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_payment_method.table.gz - 0.9 KB)
+0009.037 (0) Table wp_esp_price: Total expected rows (approximate): 2
+0009.042 (0) Table wp_esp_price: Total rows added: 3 in 0.00 seconds
+0009.045 (0) Table wp_esp_price: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_price.table.gz - 0.5 KB)
+0009.056 (0) Table wp_esp_price_type: Total expected rows (approximate): 5
+0009.063 (0) Table wp_esp_price_type: Total rows added: 5 in 0.00 seconds
+0009.066 (0) Table wp_esp_price_type: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_price_type.table.gz - 0.5 KB)
+0009.078 (0) Table wp_esp_question: Total expected rows (approximate): 10
+0009.083 (0) Table wp_esp_question: Total rows added: 10 in 0.00 seconds
+0009.086 (0) Table wp_esp_question: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_question.table.gz - 0.7 KB)
+0009.098 (0) Table wp_esp_question_group: Total expected rows (approximate): 2
+0009.103 (0) Table wp_esp_question_group: Total rows added: 2 in 0.00 seconds
+0009.106 (0) Table wp_esp_question_group: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_question_group.table.gz - 0.5 KB)
+0009.117 (0) Table wp_esp_question_group_question: Total expected rows (approximate): 10
+0009.122 (0) Table wp_esp_question_group_question: Total rows added: 10 in 0.00 seconds
+0009.125 (0) Table wp_esp_question_group_question: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_question_group_question.table.gz - 0.4 KB)
+0009.136 (0) Table wp_esp_question_option: Total expected rows (approximate): 0
+0009.141 (0) Table wp_esp_question_option: Total rows added: 0 in 0.00 seconds
+0009.144 (0) Table wp_esp_question_option: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_question_option.table.gz - 0.4 KB)
+0009.157 (0) Table wp_esp_registration: Total expected rows (approximate): 2
+0009.163 (0) Table wp_esp_registration: Total rows added: 2 in 0.00 seconds
+0009.165 (0) Table wp_esp_registration: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_registration.table.gz - 0.7 KB)
+0009.177 (0) Table wp_esp_registration_payment: Total expected rows (approximate): 0
+0009.181 (0) Table wp_esp_registration_payment: Total rows added: 0 in 0.00 seconds
+0009.185 (0) Table wp_esp_registration_payment: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_registration_payment.table.gz - 0.3 KB)
+0009.197 (0) Table wp_esp_state: Total expected rows (approximate): 69
+0009.203 (0) Table wp_esp_state: Total rows added: 69 in 0.00 seconds
+0009.207 (0) Table wp_esp_state: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_state.table.gz - 1.2 KB)
+0009.223 (0) Table wp_esp_status: Total expected rows (approximate): 35
+0009.231 (0) Table wp_esp_status: Total rows added: 35 in 0.00 seconds
+0009.234 (0) Table wp_esp_status: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_status.table.gz - 0.7 KB)
+0009.245 (0) Table wp_esp_ticket: Total expected rows (approximate): 3
+0009.251 (0) Table wp_esp_ticket: Total rows added: 3 in 0.00 seconds
+0009.254 (0) Table wp_esp_ticket: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_ticket.table.gz - 0.6 KB)
+0009.267 (0) Table wp_esp_ticket_price: Total expected rows (approximate): 2
+0009.272 (0) Table wp_esp_ticket_price: Total rows added: 3 in 0.00 seconds
+0009.276 (0) Table wp_esp_ticket_price: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_ticket_price.table.gz - 0.3 KB)
+0009.289 (0) Table wp_esp_ticket_template: Total expected rows (approximate): 0
+0009.293 (0) Table wp_esp_ticket_template: Total rows added: 0 in 0.00 seconds
+0009.296 (0) Table wp_esp_ticket_template: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_ticket_template.table.gz - 0.3 KB)
+0009.308 (0) Table wp_esp_transaction: Total expected rows (approximate): 1
+0009.313 (0) Table wp_esp_transaction: Total rows added: 1 in 0.00 seconds
+0009.316 (0) Table wp_esp_transaction: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_transaction.table.gz - 0.6 KB)
+0009.328 (0) Table wp_esp_venue_meta: Total expected rows (approximate): 0
+0009.333 (0) Table wp_esp_venue_meta: Total rows added: 1 in 0.00 seconds
+0009.338 (0) Table wp_esp_venue_meta: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_venue_meta.table.gz - 0.5 KB)
+0009.350 (0) Table wp_sg_action: Total expected rows (approximate): 0
+0009.355 (0) Table wp_sg_action: Total rows added: 1 in 0.00 seconds
+0009.358 (0) Table wp_sg_action: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_sg_action.table.gz - 0.6 KB)
+0009.368 (0) Table wp_sg_config: Total expected rows (approximate): 11
+0009.373 (0) Table wp_sg_config: Total rows added: 11 in 0.00 seconds
+0009.377 (0) Table wp_sg_config: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_sg_config.table.gz - 0.5 KB)
+0009.388 (0) Table wp_sg_schedule: Total expected rows (approximate): 0
+0009.393 (0) Table wp_sg_schedule: Total rows added: 0 in 0.00 seconds
+0009.396 (0) Table wp_sg_schedule: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_sg_schedule.table.gz - 0.3 KB)
+0009.408 (0) Table wp_woocommerce_api_keys: Total expected rows (approximate): 0
+0009.413 (0) Table wp_woocommerce_api_keys: Total rows added: 0 in 0.00 seconds
+0009.417 (0) Table wp_woocommerce_api_keys: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_api_keys.table.gz - 0.4 KB)
+0009.428 (0) Table wp_woocommerce_attribute_taxonomies: Total expected rows (approximate): 0
+0009.433 (0) Table wp_woocommerce_attribute_taxonomies: Total rows added: 0 in 0.00 seconds
+0009.436 (0) Table wp_woocommerce_attribute_taxonomies: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_attribute_taxonomies.table.gz - 0.4 KB)
+0009.448 (0) Table wp_woocommerce_downloadable_product_permissions: Total expected rows (approximate): 0
+0009.454 (0) Table wp_woocommerce_downloadable_product_permissions: Total rows added: 0 in 0.00 seconds
+0009.457 (0) Table wp_woocommerce_downloadable_product_permissions: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_downloadable_product_permissions.table.gz - 0.5 KB)
+0009.468 (0) Table wp_woocommerce_order_items: Total expected rows (approximate): 0
+0009.472 (0) Table wp_woocommerce_order_items: Total rows added: 0 in 0.00 seconds
+0009.475 (0) Table wp_woocommerce_order_items: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_order_items.table.gz - 0.3 KB)
+0009.488 (0) Table wp_woocommerce_payment_tokens: Total expected rows (approximate): 0
+0009.493 (0) Table wp_woocommerce_payment_tokens: Total rows added: 0 in 0.00 seconds
+0009.497 (0) Table wp_woocommerce_payment_tokens: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_payment_tokens.table.gz - 0.4 KB)
+0009.508 (0) Table wp_woocommerce_sessions: Total expected rows (approximate): 1
+0009.513 (0) Table wp_woocommerce_sessions: Total rows added: 1 in 0.00 seconds
+0009.517 (0) Table wp_woocommerce_sessions: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_sessions.table.gz - 0.6 KB)
+0009.534 (0) Table wp_woocommerce_shipping_zone_locations: Total expected rows (approximate): 2
+0009.542 (0) Table wp_woocommerce_shipping_zone_locations: Total rows added: 2 in 0.00 seconds
+0009.545 (0) Table wp_woocommerce_shipping_zone_locations: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_shipping_zone_locations.table.gz - 0.4 KB)
+0009.559 (0) Table wp_woocommerce_shipping_zone_methods: Total expected rows (approximate): 0
+0009.563 (0) Table wp_woocommerce_shipping_zone_methods: Total rows added: 0 in 0.00 seconds
+0009.566 (0) Table wp_woocommerce_shipping_zone_methods: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_shipping_zone_methods.table.gz - 0.4 KB)
+0009.578 (0) Table wp_woocommerce_shipping_zones: Total expected rows (approximate): 2
+0009.583 (0) Table wp_woocommerce_shipping_zones: Total rows added: 2 in 0.00 seconds
+0009.588 (0) Table wp_woocommerce_shipping_zones: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_shipping_zones.table.gz - 0.4 KB)
+0009.601 (0) Table wp_woocommerce_tax_rate_locations: Total expected rows (approximate): 0
+0009.606 (0) Table wp_woocommerce_tax_rate_locations: Total rows added: 0 in 0.00 seconds
+0009.609 (0) Table wp_woocommerce_tax_rate_locations: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_tax_rate_locations.table.gz - 0.4 KB)
+0009.622 (0) Table wp_woocommerce_tax_rates: Total expected rows (approximate): 0
+0009.627 (0) Table wp_woocommerce_tax_rates: Total rows added: 0 in 0.00 seconds
+0009.630 (0) Table wp_woocommerce_tax_rates: finishing file (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_tax_rates.table.gz - 0.4 KB)
+0009.640 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_options.table.gz (1/72): adding to final database dump
+0009.672 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_users.table.gz (2/72): adding to final database dump
+0009.675 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_usermeta.table.gz (3/72): adding to final database dump
+0009.679 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_commentmeta.table.gz (4/72): adding to final database dump
+0009.682 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_comments.table.gz (5/72): adding to final database dump
+0009.685 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_links.table.gz (6/72): adding to final database dump
+0009.688 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_pantheon_sessions.table.gz (7/72): adding to final database dump
+0009.692 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_postmeta.table.gz (8/72): adding to final database dump
+0009.732 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_posts.table.gz (9/72): adding to final database dump
+0009.743 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_term_relationships.table.gz (10/72): adding to final database dump
+0009.747 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_term_taxonomy.table.gz (11/72): adding to final database dump
+0009.750 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_termmeta.table.gz (12/72): adding to final database dump
+0009.753 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_terms.table.gz (13/72): adding to final database dump
+0009.756 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_order_itemmeta.table.gz (14/72): adding to final database dump
+0009.760 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_payment_tokenmeta.table.gz (15/72): adding to final database dump
+0009.762 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_em_bookings.table.gz (16/72): adding to final database dump
+0009.767 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_em_events.table.gz (17/72): adding to final database dump
+0009.771 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_em_locations.table.gz (18/72): adding to final database dump
+0009.775 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_em_meta.table.gz (19/72): adding to final database dump
+0009.779 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_em_tickets.table.gz (20/72): adding to final database dump
+0009.783 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_em_tickets_bookings.table.gz (21/72): adding to final database dump
+0009.786 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_answer.table.gz (22/72): adding to final database dump
+0009.790 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_attendee_meta.table.gz (23/72): adding to final database dump
+0009.793 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_checkin.table.gz (24/72): adding to final database dump
+0009.796 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_country.table.gz (25/72): adding to final database dump
+0009.802 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_currency.table.gz (26/72): adding to final database dump
+0009.808 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_currency_payment_method.table.gz (27/72): adding to final database dump
+0009.812 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_datetime.table.gz (28/72): adding to final database dump
+0009.816 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_datetime_ticket.table.gz (29/72): adding to final database dump
+0009.820 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_event_message_template.table.gz (30/72): adding to final database dump
+0009.823 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_event_meta.table.gz (31/72): adding to final database dump
+0009.826 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_event_question_group.table.gz (32/72): adding to final database dump
+0009.829 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_event_venue.table.gz (33/72): adding to final database dump
+0009.832 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_extra_join.table.gz (34/72): adding to final database dump
+0009.836 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_extra_meta.table.gz (35/72): adding to final database dump
+0009.839 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_line_item.table.gz (36/72): adding to final database dump
+0009.843 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_log.table.gz (37/72): adding to final database dump
+0009.846 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_message.table.gz (38/72): adding to final database dump
+0009.849 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_message_template.table.gz (39/72): adding to final database dump
+0009.854 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_message_template_group.table.gz (40/72): adding to final database dump
+0009.857 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_payment.table.gz (41/72): adding to final database dump
+0009.860 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_payment_method.table.gz (42/72): adding to final database dump
+0009.863 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_price.table.gz (43/72): adding to final database dump
+0009.866 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_price_type.table.gz (44/72): adding to final database dump
+0009.869 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_question.table.gz (45/72): adding to final database dump
+0009.872 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_question_group.table.gz (46/72): adding to final database dump
+0009.876 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_question_group_question.table.gz (47/72): adding to final database dump
+0009.879 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_question_option.table.gz (48/72): adding to final database dump
+0009.882 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_registration.table.gz (49/72): adding to final database dump
+0009.884 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_registration_payment.table.gz (50/72): adding to final database dump
+0009.887 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_state.table.gz (51/72): adding to final database dump
+0009.891 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_status.table.gz (52/72): adding to final database dump
+0009.894 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_ticket.table.gz (53/72): adding to final database dump
+0009.897 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_ticket_price.table.gz (54/72): adding to final database dump
+0009.902 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_ticket_template.table.gz (55/72): adding to final database dump
+0009.905 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_transaction.table.gz (56/72): adding to final database dump
+0009.908 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_esp_venue_meta.table.gz (57/72): adding to final database dump
+0009.911 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_sg_action.table.gz (58/72): adding to final database dump
+0009.914 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_sg_config.table.gz (59/72): adding to final database dump
+0009.917 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_sg_schedule.table.gz (60/72): adding to final database dump
+0009.921 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_api_keys.table.gz (61/72): adding to final database dump
+0009.923 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_attribute_taxonomies.table.gz (62/72): adding to final database dump
+0009.927 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_downloadable_product_permissions.table.gz (63/72): adding to final database dump
+0009.930 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_order_items.table.gz (64/72): adding to final database dump
+0009.933 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_payment_tokens.table.gz (65/72): adding to final database dump
+0009.936 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_sessions.table.gz (66/72): adding to final database dump
+0009.939 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_shipping_zone_locations.table.gz (67/72): adding to final database dump
+0009.942 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_shipping_zone_methods.table.gz (68/72): adding to final database dump
+0009.945 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_shipping_zones.table.gz (69/72): adding to final database dump
+0009.948 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_tax_rate_locations.table.gz (70/72): adding to final database dump
+0009.950 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db-table-wp_woocommerce_tax_rates.table.gz (71/72): adding to final database dump
+0009.954 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db.gz: finished writing out complete database file (184 KB)
+0009.968 (0) Total database tables backed up: 71 (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db.gz, size: 207426, checksum (SHA1): 46cce1cb68b152c670ae86175c5b0acc7478187c)
+0009.987 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+0009.990 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+0009.993 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+0009.995 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-others.zip: others: This file has not yet been successfully uploaded: will queue
+0009.998 (0) backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db.gz: db: This file has not yet been successfully uploaded: will queue
+0010.001 (0) Saving backup history. Total backup size: 43.1 MB
+0010.009 (0) Requesting upload of the files that have not yet been successfully uploaded (5)
+0010.019 (0) Cloud backup selection (1/1): dropbox (last)
+0010.023 (0) Beginning dispatch of backup to remote (dropbox)
+0010.026 (0) Dropbox: begin cloud upload
+0010.037 (0) Dropbox: access gained; setting chunk size to: 1024 KB
+0010.477 (0) Dropbox quota usage: normal=1533.6 MB, shared=921.8 MB, total=3968 MB, available=1512.6 MB
+0010.481 (0) Dropbox: Attempt to upload: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip to: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip
+0011.932 (0) Dropbox chunked upload: 3.9 % uploaded (AAAAAAAAZ3iPo7de921Bgw, 1048576, 4096 KB)
+0014.848 (0) Dropbox chunked upload: 19.3 % uploaded (AAAAAAAAZ3iPo7de921Bgw, 5242880, 10240 KB)
+0018.930 (0) Dropbox chunked upload: 57.8 % uploaded (AAAAAAAAZ3iPo7de921Bgw, 15728640, 10240 KB)
+0023.734 (0) Dropbox chunked upload: 96.3 % uploaded (AAAAAAAAZ3iPo7de921Bgw, 26214400, 10240 KB)
+0025.808 (0) Dropbox chunked upload: 100 % uploaded (AAAAAAAAZ3iPo7de921Bgw, 27230733, 10240 KB)
+0027.727 (0) Recording as successfully uploaded: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip (1d0fe9d601d9db9722f5fbf7eec23c2b)
+0027.749 (0) Deleting local file: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip: OK
+0027.752 (0) Dropbox: File upload success (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-plugins.zip): 26592 KB in 17s (1539 KB/s)
+0028.102 (0) Dropbox quota usage: normal=1559.6 MB, shared=921.8 MB, total=3968 MB, available=1486.6 MB
+0028.107 (0) Dropbox: Attempt to upload: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-themes.zip to: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-themes.zip
+0032.099 (0) Dropbox chunked upload: 61.3 % uploaded (AAAAAAAAZ3mKTY-iTbzuZw, 10485760, 10240 KB)
+0037.021 (0) Dropbox chunked upload: 100 % uploaded (AAAAAAAAZ3mKTY-iTbzuZw, 17099326, 10240 KB)
+0038.188 (0) Recording as successfully uploaded: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-themes.zip (f1e3cb23c7a7201bbeef159d6f92dfe0)
+0038.203 (0) Deleting local file: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-themes.zip: OK
+0038.206 (0) Dropbox: File upload success (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-themes.zip): 16698 KB in 10s (1653 KB/s)
+0038.723 (0) Dropbox quota usage: normal=1575.9 MB, shared=921.8 MB, total=3968 MB, available=1470.3 MB
+0038.727 (0) Dropbox: Attempt to upload: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-uploads.zip to: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-uploads.zip
+0039.290 (0) Dropbox chunked upload: 100 % uploaded (AAAAAAAAZ3rfY4Ni5weKRQ, 2234, 10240 KB)
+0040.099 (0) Recording as successfully uploaded: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-uploads.zip (98ac230f3b59ac49e0ff8d0dd50d8203)
+0040.116 (0) Deleting local file: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-uploads.zip: OK
+0040.120 (0) Dropbox: File upload success (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-uploads.zip): 2 KB in 1s (1 KB/s)
+0040.492 (0) Dropbox quota usage: normal=1575.9 MB, shared=921.8 MB, total=3968 MB, available=1470.3 MB
+0040.496 (0) Dropbox: Attempt to upload: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-others.zip to: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-others.zip
+0041.396 (0) Dropbox chunked upload: 100 % uploaded (AAAAAAAAZ3tkNHv52fEnlQ, 613260, 10240 KB)
+0042.698 (0) Recording as successfully uploaded: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-others.zip (378a244edc8b3f327bc8db02df99caef)
+0042.711 (0) Deleting local file: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-others.zip: OK
+0042.714 (0) Dropbox: File upload success (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-others.zip): 598 KB in 2s (269 KB/s)
+0043.061 (0) Dropbox quota usage: normal=1576.5 MB, shared=921.8 MB, total=3968 MB, available=1469.7 MB
+0043.065 (0) Dropbox: Attempt to upload: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db.gz to: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db.gz
+0043.977 (0) Dropbox chunked upload: 100 % uploaded (AAAAAAAAZ3xgZ0fjNrh9GA, 207426, 10240 KB)
+0045.294 (0) Recording as successfully uploaded: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db.gz (1a11730f13ba05ee9ca14a8d2d79a5cb)
+0045.304 (0) Deleting local file: backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db.gz: OK
+0045.308 (0) Dropbox: File upload success (backup_2016-08-13-1410_PAVA_Bewustzijnsmodel_51a9d9b4b5a5-db.gz): 202 KB in 2s (90 KB/s)
+0045.315 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=4, retain_db=4
+0045.319 (0) Number of backup sets in history: 5; groups (db): 1
+0045.322 (0) Examining (for databases) backup set with group_id=0, nonce=51a9d9b4b5a5, datestamp=1471090225 (Aug 13 2016 12:10:25)
+0045.324 (0) This backup set is the backup set just made, so will not be deleted.
+0045.327 (0) Examining (for databases) backup set with group_id=0, nonce=ff212368f047, datestamp=1471078045 (Aug 13 2016 08:47:25)
+0045.329 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0045.332 (0) Examining (for databases) backup set with group_id=0, nonce=c3a9b0e032f7, datestamp=1471006788 (Aug 12 2016 12:59:48)
+0045.335 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0045.337 (0) Examining (for databases) backup set with group_id=0, nonce=915d5b656ee4, datestamp=1470849704 (Aug 10 2016 17:21:44)
+0045.340 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0045.342 (0) Examining (for databases) backup set with group_id=0, nonce=efcd4e959c2e, datestamp=1470642614 (Aug 08 2016 07:50:14)
+0045.345 (0) 1470642614: db: this set includes a database (backup_2016-08-08-0950_PAVA_Bewustzijnsmodel_efcd4e959c2e-db.gz); db count is now 4
+0045.348 (0) 1470642614: db: over retain limit (4); will delete this database
+0045.350 (0) Delete file: backup_2016-08-08-0950_PAVA_Bewustzijnsmodel_efcd4e959c2e-db.gz, service=dropbox
+0045.353 (0) Dropbox: request deletion: backup_2016-08-08-0950_PAVA_Bewustzijnsmodel_efcd4e959c2e-db.gz
+0045.809 (0) Dropbox: delete succeeded
+0045.817 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0045.819 (0) Number of backup sets in history: 5; groups (files): 1
+0045.822 (0) Examining (for files) backup set with nonce=51a9d9b4b5a5, datestamp=1471090225 (Aug 13 2016 12:10:25)
+0045.825 (0) This backup set is the backup set just made, so will not be deleted.
+0045.828 (0) This backup set is the backup set just made, so will not be deleted.
+0045.828 (0) This backup set is the backup set just made, so will not be deleted.
+0045.829 (0) This backup set is the backup set just made, so will not be deleted.
+0045.829 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0045.831 (0) Examining (for files) backup set with nonce=ff212368f047, datestamp=1471078045 (Aug 13 2016 08:47:25)
+0045.834 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0045.837 (0) Examining (for files) backup set with nonce=c3a9b0e032f7, datestamp=1471006788 (Aug 12 2016 12:59:48)
+0045.839 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0045.842 (0) Examining (for files) backup set with nonce=915d5b656ee4, datestamp=1470849704 (Aug 10 2016 17:21:44)
+0045.845 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0045.847 (0) Examining (for files) backup set with nonce=efcd4e959c2e, datestamp=1470642614 (Aug 08 2016 07:50:14)
+0045.850 (0) plugins: over retain limit (4); will delete this file entity
+0045.852 (0) themes: over retain limit (4); will delete this file entity
+0045.855 (0) uploads: over retain limit (4); will delete this file entity
+0045.857 (0) others: over retain limit (4); will delete this file entity
+0045.860 (0) Delete file: backup_2016-08-08-0950_PAVA_Bewustzijnsmodel_efcd4e959c2e-plugins.zip, service=dropbox
+0045.863 (0) Delete file: backup_2016-08-08-0950_PAVA_Bewustzijnsmodel_efcd4e959c2e-themes.zip, service=dropbox
+0045.865 (0) Delete file: backup_2016-08-08-0950_PAVA_Bewustzijnsmodel_efcd4e959c2e-uploads.zip, service=dropbox
+0045.868 (0) Delete file: backup_2016-08-08-0950_PAVA_Bewustzijnsmodel_efcd4e959c2e-others.zip, service=dropbox
+0045.870 (0) Dropbox: request deletion: backup_2016-08-08-0950_PAVA_Bewustzijnsmodel_efcd4e959c2e-plugins.zip
+0046.398 (0) Dropbox: delete succeeded
+0046.402 (0) Dropbox: request deletion: backup_2016-08-08-0950_PAVA_Bewustzijnsmodel_efcd4e959c2e-themes.zip
+0046.893 (0) Dropbox: delete succeeded
+0046.896 (0) Dropbox: request deletion: backup_2016-08-08-0950_PAVA_Bewustzijnsmodel_efcd4e959c2e-uploads.zip
+0048.167 (0) Dropbox: delete succeeded
+0048.170 (0) Dropbox: request deletion: backup_2016-08-08-0950_PAVA_Bewustzijnsmodel_efcd4e959c2e-others.zip
+0049.028 (0) Dropbox: delete succeeded
+0049.035 (0) This backup set is now empty; will remove from history
+0049.042 (0) Deleting log file (log.efcd4e959c2e.txt)
+0049.048 (0) Retain: saving new backup history (sets now: 4) and finishing retain operation
+0049.058 (0) Resume backup (51a9d9b4b5a5, 0): finish run
+0049.067 (0) Decremented the semaphore (fd) by 1
+0049.071 (0) Semaphore (fd) unlocked
+0049.074 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0049.084 (0) The backup apparently succeeded and is now complete
+0049.087 (0) Fetching RSS news feed
+0049.094 (0) Fetched RSS news feed; result is a: SimplePie
+0049.099 (0) Sending email ('Bestanden en database (Volledige backup)') report (attachments: 0, size: 0 KB) to: webta...
+0049.142 (0) De backup is zo te zien geslaagd, en is nu afgerond.
