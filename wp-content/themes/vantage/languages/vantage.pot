@@ -124,6 +124,10 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
+#: content-single.php:59
+msgid "Add author biographical info."
+msgstr ""
+
 #: content.php:30
 msgid "Permalink to %s"
 msgstr ""
@@ -212,19 +216,19 @@ msgstr ""
 msgid "Header"
 msgstr ""
 
-#: functions.php:388
+#: functions.php:379
 msgid "Back To Top"
 msgstr ""
 
-#: functions.php:581
+#: functions.php:572
 msgid "SiteOrigin Page Builder"
 msgstr ""
 
-#: functions.php:586
+#: functions.php:577
 msgid "SiteOrigin Widgets Bundle"
 msgstr ""
 
-#: functions.php:591
+#: functions.php:582
 msgid "SiteOrigin CSS"
 msgstr ""
 
@@ -482,7 +486,7 @@ msgstr ""
 msgid "Source"
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:2549, inc/settings.php:398
+#: inc/class-tgm-plugin-activation.php:2549, inc/settings.php:401
 msgid "Type"
 msgstr ""
 
@@ -620,7 +624,7 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: inc/customizer.php:20, inc/settings.php:99
+#: inc/customizer.php:20, inc/settings.php:100
 msgid "Mobile Menu"
 msgstr ""
 
@@ -644,287 +648,315 @@ msgstr ""
 msgid "Heading Font"
 msgstr ""
 
-#: inc/customizer.php:65
+#: inc/customizer.php:64
+msgid "Menu Font"
+msgstr ""
+
+#: inc/customizer.php:71
 msgid "Site Title Size"
 msgstr ""
 
-#: inc/customizer.php:72
+#: inc/customizer.php:78
 msgid "Site Title Color"
 msgstr ""
 
-#: inc/customizer.php:79
+#: inc/customizer.php:85
 msgid "Header Text Size"
 msgstr ""
 
-#: inc/customizer.php:87
+#: inc/customizer.php:93
 msgid "Header Text Color"
 msgstr ""
 
-#: inc/customizer.php:94
+#: inc/customizer.php:100
 msgid "Page Title Size"
 msgstr ""
 
-#: inc/customizer.php:102
+#: inc/customizer.php:108
 msgid "Page Title Color"
 msgstr ""
 
-#: inc/customizer.php:109
+#: inc/customizer.php:115
 msgid "Content Size"
 msgstr ""
 
-#: inc/customizer.php:117
+#: inc/customizer.php:123
 msgid "Content Color"
 msgstr ""
 
-#: inc/customizer.php:124
+#: inc/customizer.php:130
 msgid "Content Heading Color"
 msgstr ""
 
-#: inc/customizer.php:133
+#: inc/customizer.php:136
+msgid "Content Heading 1 Size"
+msgstr ""
+
+#: inc/customizer.php:144
+msgid "Content Heading 2 Size"
+msgstr ""
+
+#: inc/customizer.php:152
+msgid "Content Heading 3 Size"
+msgstr ""
+
+#: inc/customizer.php:160
+msgid "Content Heading 4 Size"
+msgstr ""
+
+#: inc/customizer.php:168
+msgid "Content Heading 5 Size"
+msgstr ""
+
+#: inc/customizer.php:176
+msgid "Content Heading 6 Size"
+msgstr ""
+
+#: inc/customizer.php:186
 msgid "Header Padding"
 msgstr ""
 
-#: inc/customizer.php:141
+#: inc/customizer.php:194
 msgid "Center Logo"
 msgstr ""
 
-#: inc/customizer.php:147
+#: inc/customizer.php:200
 msgid "Content Link Color"
 msgstr ""
 
-#: inc/customizer.php:155
+#: inc/customizer.php:208
 msgid "Remove Link Underline"
 msgstr ""
 
-#: inc/customizer.php:161
+#: inc/customizer.php:214
 msgid "Content Link Hover Color"
 msgstr ""
 
-#: inc/customizer.php:169
+#: inc/customizer.php:222
 msgid "Add Link Underline on Hover"
 msgstr ""
 
-#: inc/customizer.php:178
+#: inc/customizer.php:231
 msgid "Menu Alignment"
 msgstr ""
 
-#: inc/customizer.php:183, inc/customizer.php:569, inc/widgets.php:166
+#: inc/customizer.php:236, inc/customizer.php:622, inc/widgets.php:166
 msgid "Left"
 msgstr ""
 
-#: inc/customizer.php:184, inc/customizer.php:570, inc/widgets.php:167
+#: inc/customizer.php:237, inc/customizer.php:623, inc/widgets.php:167
 msgid "Right"
 msgstr ""
 
-#: inc/customizer.php:185, inc/customizer.php:438, inc/customizer.php:465, inc/customizer.php:500
+#: inc/customizer.php:238, inc/customizer.php:491, inc/customizer.php:518, inc/customizer.php:553
 msgid "Center"
 msgstr ""
 
-#: inc/customizer.php:190, inc/customizer.php:352
+#: inc/customizer.php:243, inc/customizer.php:405
 msgid "Background"
 msgstr ""
 
-#: inc/customizer.php:197, inc/widgets.php:133
+#: inc/customizer.php:250, inc/widgets.php:133
 msgid "Text Color"
 msgstr ""
 
-#: inc/customizer.php:204
+#: inc/customizer.php:257
 msgid "Second Level Background"
 msgstr ""
 
-#: inc/customizer.php:211
+#: inc/customizer.php:264
 msgid "Second Level Text"
 msgstr ""
 
-#: inc/customizer.php:218
+#: inc/customizer.php:271
 msgid "Hover Background"
 msgstr ""
 
-#: inc/customizer.php:226
+#: inc/customizer.php:279
 msgid "Hover Text"
 msgstr ""
 
-#: inc/customizer.php:234
+#: inc/customizer.php:287
 msgid "Second Level Hover"
 msgstr ""
 
-#: inc/customizer.php:242
+#: inc/customizer.php:295
 msgid "Second Level Hover Text"
 msgstr ""
 
-#: inc/customizer.php:250, inc/widgets.php:150
+#: inc/customizer.php:303, inc/widgets.php:150
 msgid "Icon Color"
 msgstr ""
 
-#: inc/customizer.php:257
+#: inc/customizer.php:310
 msgid "Icon Hover Color"
 msgstr ""
 
-#: inc/customizer.php:265
+#: inc/customizer.php:318
 msgid "Current Page Background"
 msgstr ""
 
-#: inc/customizer.php:273
+#: inc/customizer.php:326
 msgid "Current Page Text"
 msgstr ""
 
-#: inc/customizer.php:281
+#: inc/customizer.php:334
 msgid "Search Icon Background"
 msgstr ""
 
-#: inc/customizer.php:288
+#: inc/customizer.php:341
 msgid "Search Icon Color"
 msgstr ""
 
-#: inc/customizer.php:295
+#: inc/customizer.php:348
 msgid "Search Icon Hover Color"
 msgstr ""
 
-#: inc/customizer.php:303
+#: inc/customizer.php:356
 msgid "Search Input Background"
 msgstr ""
 
-#: inc/customizer.php:310
+#: inc/customizer.php:363
 msgid "Search Input Text"
 msgstr ""
 
-#: inc/customizer.php:317
+#: inc/customizer.php:370
 msgid "Menu Item Vertical Padding (px)"
 msgstr ""
 
-#: inc/customizer.php:326
+#: inc/customizer.php:379
 msgid "Menu Item Horizontal Padding (px)"
 msgstr ""
 
-#: inc/customizer.php:334
+#: inc/customizer.php:387
 msgid "Menu Font Size"
 msgstr ""
 
-#: inc/customizer.php:342
+#: inc/customizer.php:395
 msgid "Header Widget Menu Border Color"
 msgstr ""
 
-#: inc/customizer.php:359
+#: inc/customizer.php:412
 msgid "Title Text"
 msgstr ""
 
-#: inc/customizer.php:366
+#: inc/customizer.php:419
 msgid "Title Background"
 msgstr ""
 
-#: inc/customizer.php:373
+#: inc/customizer.php:426
 msgid "Search Background"
 msgstr ""
 
-#: inc/customizer.php:380
+#: inc/customizer.php:433
 msgid "Menu Text"
 msgstr ""
 
-#: inc/customizer.php:387
+#: inc/customizer.php:440
 msgid "Menu Background"
 msgstr ""
 
-#: inc/customizer.php:394
+#: inc/customizer.php:447
 msgid "Menu Border"
 msgstr ""
 
-#: inc/customizer.php:403
+#: inc/customizer.php:456
 msgid "Circle Icon Widget Background"
 msgstr ""
 
-#: inc/customizer.php:410
+#: inc/customizer.php:463
 msgid "Circle Icon Widget Icon"
 msgstr ""
 
-#: inc/customizer.php:419
+#: inc/customizer.php:472
 msgid "Masthead Background"
 msgstr ""
 
-#: inc/customizer.php:426
+#: inc/customizer.php:479
 msgid "Masthead Background Image"
 msgstr ""
 
-#: inc/customizer.php:433
+#: inc/customizer.php:486
 msgid "Masthead Background Image Layout"
 msgstr ""
 
-#: inc/customizer.php:437, inc/customizer.php:464, inc/customizer.php:499, inc/settings.php:418
+#: inc/customizer.php:490, inc/customizer.php:517, inc/customizer.php:552, inc/settings.php:421
 msgid "Default"
 msgstr ""
 
-#: inc/customizer.php:439, inc/customizer.php:466, inc/customizer.php:501
+#: inc/customizer.php:492, inc/customizer.php:519, inc/customizer.php:554
 msgid "Tile"
 msgstr ""
 
-#: inc/customizer.php:440, inc/customizer.php:467, inc/customizer.php:502
+#: inc/customizer.php:493, inc/customizer.php:520, inc/customizer.php:555
 msgid "Cover"
 msgstr ""
 
-#: inc/customizer.php:446
+#: inc/customizer.php:499
 msgid "Page Background"
 msgstr ""
 
-#: inc/customizer.php:453
+#: inc/customizer.php:506
 msgid "Page Background Image"
 msgstr ""
 
-#: inc/customizer.php:460
+#: inc/customizer.php:513
 msgid "Page Background Image Layout"
 msgstr ""
 
-#: inc/customizer.php:473
+#: inc/customizer.php:526
 msgid "Image Shadow and Rounding"
 msgstr ""
 
-#: inc/customizer.php:481
+#: inc/customizer.php:534
 msgid "Footer Background"
 msgstr ""
 
-#: inc/customizer.php:488
+#: inc/customizer.php:541
 msgid "Footer Background Image"
 msgstr ""
 
-#: inc/customizer.php:495
+#: inc/customizer.php:548
 msgid "Footer Background Image Layout"
 msgstr ""
 
-#: inc/customizer.php:508
+#: inc/customizer.php:561
 msgid "Widget Titles"
 msgstr ""
 
-#: inc/customizer.php:515, inc/widgets.php:129
+#: inc/customizer.php:568, inc/widgets.php:129
 msgid "Text"
 msgstr ""
 
-#: inc/customizer.php:521
+#: inc/customizer.php:574
 msgid "Link Color"
 msgstr ""
 
-#: inc/customizer.php:528
+#: inc/customizer.php:581
 msgid "Link Hover Color"
 msgstr ""
 
-#: inc/customizer.php:535
+#: inc/customizer.php:588
 msgid "Site Info Text"
 msgstr ""
 
-#: inc/customizer.php:542
+#: inc/customizer.php:595
 msgid "Site Info Link"
 msgstr ""
 
-#: inc/customizer.php:549
+#: inc/customizer.php:602
 msgid "Scroll to Top Color "
 msgstr ""
 
-#: inc/customizer.php:556
+#: inc/customizer.php:609
 msgid "Scroll to Top Background"
 msgstr ""
 
-#: inc/customizer.php:565
+#: inc/customizer.php:618
 msgid "Sidebar Position"
 msgstr ""
 
-#: inc/customizer.php:568, inc/menu.php:72, inc/metaslider/metaslider.php:9, inc/widgets.php:139
+#: inc/customizer.php:621, inc/menu.php:72, inc/metaslider/metaslider.php:9, inc/widgets.php:139
 msgid "None"
 msgstr ""
 
@@ -944,7 +976,7 @@ msgstr ""
 msgid "Reset Customizations"
 msgstr ""
 
-#: inc/extras.php:131
+#: inc/extras.php:135
 msgid "Page %s"
 msgstr ""
 
@@ -952,7 +984,7 @@ msgstr ""
 msgid "Slider"
 msgstr ""
 
-#: inc/legacy.php:5, inc/legacy.php:6, inc/settings.php:372
+#: inc/legacy.php:5, inc/legacy.php:6, inc/settings.php:375
 msgid "Theme Settings"
 msgstr ""
 
@@ -1000,7 +1032,7 @@ msgstr ""
 msgid "Back"
 msgstr ""
 
-#: inc/mobilenav/mobilenav.php:15, inc/mobilenav/mobilenav.php:63, inc/settings.php:383
+#: inc/mobilenav/mobilenav.php:15, inc/mobilenav/mobilenav.php:63, inc/settings.php:386
 msgid "Close"
 msgstr ""
 
@@ -1169,482 +1201,482 @@ msgid "Header Text"
 msgstr ""
 
 #: inc/settings.php:49
-msgid "Text that appears to the right of your logo."
-msgstr ""
-
-#: inc/settings.php:52
-msgid "No Widget Overlay"
+msgid "Text that appears to the right of your logo. It will be hidden if widgets are placed in the header."
 msgstr ""
 
 #: inc/settings.php:53
+msgid "No Widget Overlay"
+msgstr ""
+
+#: inc/settings.php:54
 msgid "If enabled, header widgets won't overlap main logo image."
 msgstr ""
 
-#: inc/settings.php:60
+#: inc/settings.php:61
 msgid "Responsive Layout"
 msgstr ""
 
-#: inc/settings.php:61
+#: inc/settings.php:62
 msgid "Scale your layout for small screen devices."
 msgstr ""
 
-#: inc/settings.php:64
+#: inc/settings.php:65
 msgid "Enable FitVids.js"
 msgstr ""
 
-#: inc/settings.php:65
+#: inc/settings.php:66
 msgid "Include FitVids.js fluid embedded video layouts."
 msgstr ""
 
-#: inc/settings.php:68
+#: inc/settings.php:69
 msgid "Layout Bound"
 msgstr ""
 
-#: inc/settings.php:70
+#: inc/settings.php:71
 msgid "Boxed"
 msgstr ""
 
-#: inc/settings.php:71, inc/settings.php:420
+#: inc/settings.php:72, inc/settings.php:423
 msgid "Full Width"
 msgstr ""
 
-#: inc/settings.php:73
+#: inc/settings.php:74
 msgid "Change the width of the bounding box."
 msgstr ""
 
-#: inc/settings.php:76
+#: inc/settings.php:77
 msgid "Masthead Layout"
 msgstr ""
 
-#: inc/settings.php:78
+#: inc/settings.php:79
 msgid "Change which header area layout you're using."
 msgstr ""
 
-#: inc/settings.php:81
+#: inc/settings.php:82
 msgid "Masthead Menu"
 msgstr ""
 
-#: inc/settings.php:83
+#: inc/settings.php:84
 msgid "Choose how the masthead menu is displayed."
 msgstr ""
 
-#: inc/settings.php:86
+#: inc/settings.php:87
 msgid "Footer Layout"
 msgstr ""
 
-#: inc/settings.php:88
+#: inc/settings.php:89
 msgid "Change which footer area layout you're using."
 msgstr ""
 
-#: inc/settings.php:91
+#: inc/settings.php:92
 msgid "Force Page Builder Styles Full Width"
 msgstr ""
 
-#: inc/settings.php:92
+#: inc/settings.php:93
 msgid "Force Page Builder rows with styles to be full width. Only necessary for legacy reasons."
 msgstr ""
 
-#: inc/settings.php:100
+#: inc/settings.php:101
 msgid "Use a special mobile menu for small screen devices."
 msgstr ""
 
-#: inc/settings.php:103
+#: inc/settings.php:104
 msgid "Mobile Menu Collapse"
 msgstr ""
 
-#: inc/settings.php:104
+#: inc/settings.php:105
 msgid "The resolution when the menu collapses into a mobile navigation menu. Value is in pixels."
 msgstr ""
 
-#: inc/settings.php:107
+#: inc/settings.php:108
 msgid "Mobile Menu Text"
 msgstr ""
 
-#: inc/settings.php:108
+#: inc/settings.php:109
 msgid "The button used for the mobile menu."
 msgstr ""
 
-#: inc/settings.php:111
+#: inc/settings.php:112
 msgid "Mobile Menu Search"
 msgstr ""
 
-#: inc/settings.php:112
+#: inc/settings.php:113
 msgid "Enable search in the mobile menu."
 msgstr ""
 
-#: inc/settings.php:115
+#: inc/settings.php:116
 msgid "Sticky Menu"
 msgstr ""
 
-#: inc/settings.php:116
+#: inc/settings.php:117
 msgid "Sticks the menu to the top of the screen when a user scrolls down."
 msgstr ""
 
-#: inc/settings.php:119
+#: inc/settings.php:120
 msgid "Search in Menu"
 msgstr ""
 
-#: inc/settings.php:120
+#: inc/settings.php:121
 msgid "Display a search in the main menu."
 msgstr ""
 
-#: inc/settings.php:123
+#: inc/settings.php:124
 msgid "Display Scroll To Top"
 msgstr ""
 
-#: inc/settings.php:124
+#: inc/settings.php:125
 msgid "Display a scroll-to-top button when a user scrolls down."
 msgstr ""
 
-#: inc/settings.php:127
+#: inc/settings.php:128
 msgid "Post Navigation"
 msgstr ""
 
-#: inc/settings.php:128
+#: inc/settings.php:129
 msgid "Display next/previous post navigation."
 msgstr ""
 
-#: inc/settings.php:131
+#: inc/settings.php:132
 msgid "Home Page Icon"
 msgstr ""
 
-#: inc/settings.php:132
+#: inc/settings.php:133
 msgid "Display home icon for home page menu links."
 msgstr ""
 
-#: inc/settings.php:135
+#: inc/settings.php:136
 msgid "Mobile Navigation"
 msgstr ""
 
-#: inc/settings.php:136
+#: inc/settings.php:137
 msgid "Enables Sticky Menu and Scroll To Top for mobile devices."
 msgstr ""
 
-#: inc/settings.php:140
+#: inc/settings.php:141
 msgid "Breadcrumbs"
 msgstr ""
 
-#: inc/settings.php:141
+#: inc/settings.php:142
 msgid "Display breadcrumbs if you have Yoast SEO or Breadcrumb NavXT installed."
 msgstr ""
 
-#: inc/settings.php:149
+#: inc/settings.php:150
 msgid "Home Page Slider"
 msgstr ""
 
-#: inc/settings.php:152
+#: inc/settings.php:153
 msgid "This theme supports <a href=\"%s\" target=\"_blank\">Meta Slider</a>. <a href=\"%s\">Install it</a> for free to create beautiful responsive sliders - <a href=\"%s\" target=\"_blank\">More Info</a>"
 msgstr ""
 
-#: inc/settings.php:159
+#: inc/settings.php:160
 msgid "Stretch Home Slider"
 msgstr ""
 
-#: inc/settings.php:160
+#: inc/settings.php:161
 msgid "Stretch"
 msgstr ""
 
-#: inc/settings.php:161
+#: inc/settings.php:162
 msgid "Stretch the home page slider to the width of the screen if using the full width layout."
 msgstr ""
 
-#: inc/settings.php:168
+#: inc/settings.php:169
 msgid "Blog Archive Layout"
 msgstr ""
 
-#: inc/settings.php:170
+#: inc/settings.php:171
 msgid "Choose the layout to be used on blog and archive pages."
 msgstr ""
 
-#: inc/settings.php:173
+#: inc/settings.php:174
 msgid "Post Content"
 msgstr ""
 
-#: inc/settings.php:175
+#: inc/settings.php:176
 msgid "Full Post"
 msgstr ""
 
-#: inc/settings.php:176
+#: inc/settings.php:177
 msgid "Post Excerpt"
 msgstr ""
 
-#: inc/settings.php:178
+#: inc/settings.php:179
 msgid "Choose how to display posts on post archive when using default blog layout."
 msgstr ""
 
-#: inc/settings.php:181
+#: inc/settings.php:182
 msgid "Featured Image Type"
 msgstr ""
 
-#: inc/settings.php:183, inc/widgets.php:175, inc/widgets.php:344
+#: inc/settings.php:184, inc/widgets.php:175, inc/widgets.php:344
 msgid "Large"
 msgstr ""
 
-#: inc/settings.php:184
+#: inc/settings.php:185
 msgid "Small Icon"
 msgstr ""
 
-#: inc/settings.php:186
+#: inc/settings.php:187
 msgid "Size of the featured image in the blog post archives when using default blog layout."
 msgstr ""
 
-#: inc/settings.php:189
+#: inc/settings.php:190
 msgid "Featured Image"
 msgstr ""
 
-#: inc/settings.php:190, inc/settings.php:195, inc/settings.php:200, inc/settings.php:205, inc/settings.php:210, inc/settings.php:215, inc/settings.php:220, inc/settings.php:225
+#: inc/settings.php:191, inc/settings.php:196, inc/settings.php:201, inc/settings.php:206, inc/settings.php:211, inc/settings.php:216, inc/settings.php:221, inc/settings.php:226
 msgid "Display"
 msgstr ""
 
-#: inc/settings.php:191
+#: inc/settings.php:192
 msgid "Show the featured image on a post single page."
 msgstr ""
 
-#: inc/settings.php:194
+#: inc/settings.php:195
 msgid "Post Metadata"
 msgstr ""
 
-#: inc/settings.php:196
+#: inc/settings.php:197
 msgid "Show the post metadata under the post title."
 msgstr ""
 
-#: inc/settings.php:199
+#: inc/settings.php:200
 msgid "Post Date"
 msgstr ""
 
-#: inc/settings.php:201
+#: inc/settings.php:202
 msgid "Show the post date under the post title."
 msgstr ""
 
-#: inc/settings.php:204
+#: inc/settings.php:205
 msgid "Post Author"
 msgstr ""
 
-#: inc/settings.php:206
+#: inc/settings.php:207
 msgid "Show the post author under the post title."
 msgstr ""
 
-#: inc/settings.php:209
+#: inc/settings.php:210
 msgid "Post Comment Count"
 msgstr ""
 
-#: inc/settings.php:211
+#: inc/settings.php:212
 msgid "Show the number of comments under the post title."
 msgstr ""
 
-#: inc/settings.php:214
+#: inc/settings.php:215
 msgid "Post Categories"
 msgstr ""
 
-#: inc/settings.php:216
+#: inc/settings.php:217
 msgid "Show the post categories below the single post."
 msgstr ""
 
-#: inc/settings.php:219
+#: inc/settings.php:220
 msgid "Post Tags"
 msgstr ""
 
-#: inc/settings.php:221
+#: inc/settings.php:222
 msgid "Show the post tags below the single post."
 msgstr ""
 
-#: inc/settings.php:224
+#: inc/settings.php:225
 msgid "Author Box"
 msgstr ""
 
-#: inc/settings.php:226
+#: inc/settings.php:227
 msgid "Show an author box below each blog post."
 msgstr ""
 
-#: inc/settings.php:229
+#: inc/settings.php:230
 msgid "Post Author's Comments"
 msgstr ""
 
-#: inc/settings.php:230
+#: inc/settings.php:231
 msgid "Text displayed as a label next to the post author's comments."
 msgstr ""
 
-#: inc/settings.php:233
+#: inc/settings.php:235
 msgid "Read More Text"
 msgstr ""
 
-#: inc/settings.php:234
+#: inc/settings.php:236
 msgid "The link displayed when post content is split using the \"more\" quicktag."
 msgstr ""
 
-#: inc/settings.php:241
+#: inc/settings.php:243
 msgid "Ajax Comments"
 msgstr ""
 
-#: inc/settings.php:242
+#: inc/settings.php:244
 msgid "Keep your conversations flowing with ajax comments."
 msgstr ""
 
-#: inc/settings.php:250
+#: inc/settings.php:252
 msgid "Site Information Text"
 msgstr ""
 
-#: inc/settings.php:251
+#: inc/settings.php:253
 msgid "Text displayed in your footer. {site-title}, {copyright} and {year} will be replaced with your website title, a copyright symbol and the current year."
 msgstr ""
 
-#: inc/settings.php:254
+#: inc/settings.php:257
 msgid "SiteOrigin Attribution"
 msgstr ""
 
-#: inc/settings.php:255
+#: inc/settings.php:258
 msgid "Add or remove a link to SiteOrigin in your footer."
 msgstr ""
 
-#: inc/settings.php:259
+#: inc/settings.php:262
 msgid "Enqueue JavaScript in Footer"
 msgstr ""
 
-#: inc/settings.php:260
+#: inc/settings.php:263
 msgid "Enqueue JavaScript files in the footer, if possible."
 msgstr ""
 
-#: inc/settings.php:279
+#: inc/settings.php:282
 msgid "Call me! Maybe?"
 msgstr ""
 
-#: inc/settings.php:317
+#: inc/settings.php:320
 msgid "Continue reading"
 msgstr ""
 
-#: inc/settings.php:373
+#: inc/settings.php:376
 msgid "Settings for your theme"
 msgstr ""
 
-#: inc/settings.php:374
+#: inc/settings.php:377
 msgid "Premium Only"
 msgstr ""
 
-#: inc/settings.php:378
+#: inc/settings.php:381
 msgid "Variant"
 msgstr ""
 
-#: inc/settings.php:379
+#: inc/settings.php:382
 msgid "Subset"
 msgstr ""
 
-#: inc/settings.php:382
+#: inc/settings.php:385
 msgid "Vantage Premium Upgrade"
 msgstr ""
 
-#: inc/settings.php:386
+#: inc/settings.php:389
 msgid "Page settings"
 msgstr ""
 
-#: inc/settings.php:389
+#: inc/settings.php:392
 msgid "Page Template Settings"
 msgstr ""
 
-#: inc/settings.php:390
+#: inc/settings.php:393
 msgid "Change layouts for various pages on your site."
 msgstr ""
 
-#: inc/settings.php:393
+#: inc/settings.php:396
 msgid "Blog Page"
 msgstr ""
 
-#: inc/settings.php:394
+#: inc/settings.php:397
 msgid "Search Results"
 msgstr ""
 
-#: inc/settings.php:395
+#: inc/settings.php:398
 msgid "Date Archives"
 msgstr ""
 
-#: inc/settings.php:396
+#: inc/settings.php:399
 msgid "Not Found"
 msgstr ""
 
-#: inc/settings.php:397
+#: inc/settings.php:400
 msgid "Author Archives"
 msgstr ""
 
-#: inc/settings.php:399
+#: inc/settings.php:402
 msgid "Taxonomy"
 msgstr ""
 
-#: inc/settings.php:416
+#: inc/settings.php:419
 msgid "Page Layout"
 msgstr ""
 
-#: inc/settings.php:419
+#: inc/settings.php:422
 msgid "No Sidebar"
 msgstr ""
 
-#: inc/settings.php:421
+#: inc/settings.php:424
 msgid "Full Width, With Sidebar"
 msgstr ""
 
-#: inc/settings.php:429
+#: inc/settings.php:432
 msgid "Page Featured Image"
 msgstr ""
 
-#: inc/settings.php:430, inc/settings.php:438
+#: inc/settings.php:433, inc/settings.php:441
 msgid "display"
 msgstr ""
 
-#: inc/settings.php:431
+#: inc/settings.php:434
 msgid "Display the page featured image on this page."
 msgstr ""
 
-#: inc/settings.php:437
+#: inc/settings.php:440
 msgid "Page Title"
 msgstr ""
 
-#: inc/settings.php:439
+#: inc/settings.php:442
 msgid "Display the page title on this page."
 msgstr ""
 
-#: inc/settings.php:444
+#: inc/settings.php:447
 msgid "Masthead Bottom Margin"
 msgstr ""
 
-#: inc/settings.php:445, inc/settings.php:452
+#: inc/settings.php:448, inc/settings.php:455
 msgid "enable"
 msgstr ""
 
-#: inc/settings.php:446
+#: inc/settings.php:449
 msgid "Include the margin below the masthead (top area) of your site."
 msgstr ""
 
-#: inc/settings.php:451
+#: inc/settings.php:454
 msgid "Footer Top Margin"
 msgstr ""
 
-#: inc/settings.php:453
+#: inc/settings.php:456
 msgid "Include the margin above your footer."
 msgstr ""
 
-#: inc/settings.php:458
+#: inc/settings.php:461
 msgid "Hide Masthead"
 msgstr ""
 
-#: inc/settings.php:459, inc/settings.php:466
+#: inc/settings.php:462, inc/settings.php:469
 msgid "hide"
 msgstr ""
 
-#: inc/settings.php:460
+#: inc/settings.php:463
 msgid "Hide the masthead on this page."
 msgstr ""
 
-#: inc/settings.php:465
+#: inc/settings.php:468
 msgid "Hide Footer Widgets"
 msgstr ""
 
-#: inc/settings.php:467
+#: inc/settings.php:470
 msgid "Hide the footer widgets on this page."
 msgstr ""
 
-#: inc/settings.php:508
+#: inc/settings.php:511
 msgid "To use these page settings, please use the <strong>Default</strong> template selected under <strong>Page Attributes</strong>"
 msgstr ""
 
-#: inc/settings.php:546
+#: inc/settings.php:547
 msgid "Vantage is a flexible multipurpose theme. Its strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, Meta Slider for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store."
 msgstr ""
 
@@ -1686,63 +1718,63 @@ msgstr ""
 msgid "View all posts by %s"
 msgstr ""
 
-#: inc/template-tags.php:182
+#: inc/template-tags.php:184
 msgid "Posted on %s"
 msgstr ""
 
-#: inc/template-tags.php:183
+#: inc/template-tags.php:185
 msgid "<span class=\"byline\"> by %s</span>"
 msgstr ""
 
-#: inc/template-tags.php:230
+#: inc/template-tags.php:232
 msgid "%s Logo"
 msgstr ""
 
-#: inc/template-tags.php:314
+#: inc/template-tags.php:316
 msgid "Category Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:318
+#: inc/template-tags.php:320
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:323
+#: inc/template-tags.php:325
 msgid "Author Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:328
+#: inc/template-tags.php:330
 msgid "Daily Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:332
+#: inc/template-tags.php:334
 msgid "Monthly Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:336
+#: inc/template-tags.php:338
 msgid "Yearly Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:343
+#: inc/template-tags.php:345
 msgid "%s: %s"
 msgstr ""
 
-#: inc/template-tags.php:346
+#: inc/template-tags.php:348
 msgid "Archives"
 msgstr ""
 
-#: inc/template-tags.php:362, inc/template-tags.php:365
+#: inc/template-tags.php:364, inc/template-tags.php:367
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:370
+#: inc/template-tags.php:372
 msgid "<strong>Tagged</strong> %2$s."
 msgstr ""
 
-#: inc/template-tags.php:380
+#: inc/template-tags.php:382
 msgid "Posted in %1$s and tagged %2$s."
 msgstr ""
 
-#: inc/template-tags.php:383
+#: inc/template-tags.php:385
 msgid "Posted in %1$s."
 msgstr ""
 

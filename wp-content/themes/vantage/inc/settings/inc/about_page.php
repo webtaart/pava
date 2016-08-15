@@ -130,6 +130,7 @@ class SiteOrigin_Settings_About_Page {
 			'tour_url' => '',
 			'documentation_url' => '',
 			'premium_url' => SiteOrigin_Settings::get_premium_url( 'theme' ),
+			'review_url' => sprintf( 'https://wordpress.org/support/view/theme-reviews/%s?filter=5#postform', get_template() ),
 		) );
 
 		?>
@@ -162,10 +163,19 @@ class SiteOrigin_Settings_About_Page {
 					</li>
 				<?php endif; ?>
 
+				<?php if( !empty( $about[ 'review_url' ] ) ) : ?>
+					<li>
+						<a href="<?php echo esc_url( $about[ 'review_url' ] ) ?>" class="about-button-updates" target="_blank">
+							<span class="dashicons dashicons-star-filled"></span>
+							<?php esc_html_e( 'Write a Review', 'vantage' ) ?>
+						</a>
+					</li>
+				<?php endif; ?>
+
 				<?php if( !empty( $about[ 'premium_url' ] ) ) : ?>
 					<li class="about-highlight">
 						<a href="<?php echo esc_url( $about[ 'premium_url' ] ) ?>" class="about-button-updates" target="_blank">
-							<span class="dashicons dashicons-star-filled"></span>
+							<span class="dashicons dashicons-arrow-up-alt"></span>
 							<?php esc_html_e( 'Upgrade to Premium', 'vantage' ) ?>
 						</a>
 					</li>
