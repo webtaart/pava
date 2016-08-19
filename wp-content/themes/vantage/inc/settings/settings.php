@@ -40,9 +40,12 @@ class SiteOrigin_Settings {
 		}
 
 		add_action( 'after_setup_theme', array( $this, 'load_settings_extras' ) );
-		add_filter( 'siteorigin_premium_affiliate_id', array( $this, 'contributor_affiliate_id' ) );
 
 		spl_autoload_register( array( $this, '_autoload' ) );
+
+		if( current_user_can( 'install_themes' ) && is_admin() ) {
+			SiteOrigin_Settings_Upgrade::single();
+		}
 	}
 
 	/**
@@ -409,6 +412,34 @@ class SiteOrigin_Settings {
 				'description' => __( 'Change settings for your theme.', 'vantage' ),
 				'priority' => 10,
 			) );
+		}
+
+		if( ! defined( 'SITEORIGIN_IS_PREMIUM' ) && ! defined( 'SITEORIGIN_PREMIUM_VERSION' ) ) {
+			$wp_customize->add_section( 'theme_settings_premium', array(
+				'title' => __( 'SiteOrigin Premium', 'vantage' ),
+				'priority' => 1,
+				'panel' => 'theme_settings',
+			) );
+
+			$wp_customize->add_setting( 'theme_settings_premium_message' , array(
+				'default' => '',
+				'transport' => 'refresh',
+				'capability' => 'edit_theme_options',
+				'type' => 'theme_mod',
+				'sanitize_callback' => 'sanitize_text_field',
+			) );
+
+			$wp_customize->add_control(
+				new SiteOrigin_Settings_Control_Premium(
+					$wp_customize,
+					'theme_settings_premium_message',
+					array(
+						'label' => __( 'SiteOrigin Premium', 'vantage' ),
+						'section'  => 'theme_settings_premium',
+						'settings' => 'theme_settings_premium_message',
+					)
+				)
+			);
 		}
 
 		// Add sections for what would have been tabs before
@@ -785,33 +816,6 @@ class SiteOrigin_Settings {
 		$url = add_query_arg( $args, defined( 'SITEORIGIN_THEME_PREMIUM_URL' ) ? SITEORIGIN_THEME_PREMIUM_URL : 'https://siteorigin.com/downloads/premium/' );
 
 		return $url;
-	}
-
-	/**
-	 * Add a random affiliate ID based on contributors file
-	 */
-	function contributor_affiliate_id( $aff ){
-		if( file_exists( get_template_directory() . '/inc/contributors.php' ) ) {
-			static $contributor = false;
-			if( empty( $contributor ) ) {
-				$contributors = include get_template_directory() . '/inc/contributors.php';
-				shuffle( $contributors );
-
-				$rand = rand( 0, 10000 ) / 100;
-				$sum = 0;
-
-				foreach ( $contributors as $c ) {
-					$sum += floatval( $c['percent'] );
-					if ( $sum >= $rand ) {
-						$contributor = $c[ 'email' ];
-						break;
-					}
-				}
-			}
-			$aff = $contributor;
-		}
-
-		return $aff;
 	}
 }
 

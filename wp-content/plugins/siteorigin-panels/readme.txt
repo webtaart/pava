@@ -1,9 +1,9 @@
 === Page Builder by SiteOrigin ===
 Tags: page builder, responsive, widget, widgets, builder, page, admin, gallery, content, cms, pages, post, css, layout, grid
 Requires at least: 4.0
-Tested up to: 4.5.3
-Stable tag: 2.4.11
-Build time: 2016-08-14T09:17:20+02:00
+Tested up to: 4.6
+Stable tag: 2.4.12
+Build time: 2016-08-17T08:05:36+02:00
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Donate link: http://siteorigin.com/page-builder/#donate
@@ -95,6 +95,9 @@ Page Builder is actively developed and updated, so generally I'd recommend that 
 We've tried to ensure that Page Builder is compatible with most plugin widgets. It's best to just download Page Builder and test for yourself.
 
 == Changelog ==
+
+= 2.4.12 - 17 August 2016 =
+* Fixed layout directory requests for WordPress 4.6
 
 = 2.4.11 - 15 August 2016 =
 * Added esc_url to all add_query_arg calls.
