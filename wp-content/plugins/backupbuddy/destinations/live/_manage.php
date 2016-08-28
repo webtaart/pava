@@ -1019,6 +1019,55 @@ if ( 0 != $state['stats']['files_pending_delete'] ) {
 	<?php echo $destination['itxapi_username']; ?> (<a href="<?php echo pb_backupbuddy::nonce_url( $admin_url . '?page=pb_backupbuddy_live&live_action=disconnect' ); ?>">Disconnect</a>)
 	<br><br>
 	
+	<b>Stats by Day:</b><br>
+	<table class="widefat">
+		<thead>
+			<tr class="thead">
+				<th>&nbsp;</th>
+				<?php
+				foreach( $state['stats']['daily'] as $date => $stat ) {
+					echo '<th><b>' . $date . '</b></th>';
+				}
+				?>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="entry-row alternate">Database Tables Sent (Count)</td>
+				<?php
+				foreach( $state['stats']['daily'] as $stat ) {
+					echo '<td class="entry-row alternate">' . $stat['d_t'] . '</td>';
+				}
+				?>
+			</tr>
+			<tr>
+				<td class="entry-row alternate">Database Data Sent (Size)</td>
+				<?php
+				foreach( $state['stats']['daily'] as $stat ) {
+					echo '<td class="entry-row alternate">' . pb_backupbuddy::$format->file_size( $stat['d_s'] ) . '</td>';
+				}
+				?>
+			</tr>
+			<tr>
+				<td class="entry-row alternate">Files Sent (Count)</td>
+				<?php
+				foreach( $state['stats']['daily'] as $stat ) {
+					echo '<td class="entry-row alternate">' . $stat['f_t'] . '</td>';
+				}
+				?>
+			</tr>
+			<tr>
+				<td class="entry-row alternate">File Data Sent (Size)</td>
+				<?php
+				foreach( $state['stats']['daily'] as $stat ) {
+					echo '<td class="entry-row alternate">' . pb_backupbuddy::$format->file_size( $stat['f_s'] ) . '</td>';
+				}
+				?>
+			</tr>
+		</tbody>
+	</table>
+	<br><br>
+	
 	<h4>Actions:</h4>
 	<a href="<?php echo pb_backupbuddy::nonce_url( $admin_url . '?page=pb_backupbuddy_live&live_action=resume_periodic&skip_run_live_now=1' ); ?>" class="button button-secondary button-tertiary">Unpause Periodic Without Running</a>
 	<a href="<?php echo pb_backupbuddy::nonce_url( $admin_url . '?page=pb_backupbuddy_live&live_action=reset_send_attempts' ); ?>" class="button button-secondary button-tertiary">Reset Send Attempts</a>

@@ -11,17 +11,17 @@ echo "<script>bb_showStep( 'unzippingFiles' );</script>";
 pb_backupbuddy::flush();
 
 
-if ( 'true' != pb_backupbuddy::_GET( 'deploy' ) ) { // deployment mode pre-loads state data in a file instead of passing via post.
+if ( 'true' != pb_backupbuddy::_GET( 'deploy' ) ) { // NOT deployment. deployment mode pre-loads state data in a file instead of passing via post.
 	// Determine selected archive file.
 	$archiveFile = ABSPATH . str_replace( array( '\\', '/' ), '', pb_backupbuddy::_POST( 'file' ) );
 	$existing_state = array();
-} else {
+} else { // Deployment.
 	if ( isset( pb_backupbuddy::$options['default_state_overrides'] ) && ( count( pb_backupbuddy::$options['default_state_overrides'] ) > 0 ) ) { // Default state overrides exist. Apply them.
 		$archiveFile = pb_backupbuddy::$options['default_state_overrides']['archive'];
 		$existing_state = pb_backupbuddy::$options['default_state_overrides'];
 		$existing_state['tempPath'] = ABSPATH . 'importbuddy/temp_' . pb_backupbuddy::random_string( 12 ) . '/';
 	} else {
-		die( 'Error #843797944: Missing expected default state override.' );
+		die( 'Error #84379794322337894: Missing expected default state override.' );
 	}
 }
 

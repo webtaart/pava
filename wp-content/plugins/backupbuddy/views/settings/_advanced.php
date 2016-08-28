@@ -314,16 +314,18 @@ $settings_form->add_setting( array(
 	'after'		=>		'<span class="description"> ' . __('Use if exclusions are malfunctioning or for special purposes.', 'it-l10n-backupbuddy' ) . '</span>',
 	'rules'		=>		'required',
 ) );
-$settings_form->add_setting( array(
-	'type'		=>		'checkbox',
-	'name'		=>		'disable_https_local_ssl_verify',
-	'options'	=>		array( 'unchecked' => '0', 'checked' => '1' ),
-	'title'		=>		__( 'Disable local SSL certificate verification', 'it-l10n-backupbuddy' ),
-	'tip'		=>		__( '[Default: Disabled] When checked, WordPress will skip local https SSL verification.', 'it-l10n-backupbuddy' ) . '</span>',
-	'css'		=>		'',
-	'after'		=>		'<span class="description"> ' . __( 'Workaround if local SSL verification fails (ie. for loopback & local CA cert issues).', 'it-l10n-backupbuddy' ) . '</span>',
-	'rules'		=>		'required',
-) );
+if ( version_compare( $GLOBALS['wp_version'], '4.6', '<' ) ) {
+	$settings_form->add_setting( array(
+		'type'		=>		'checkbox',
+		'name'		=>		'disable_https_local_ssl_verify',
+		'options'	=>		array( 'unchecked' => '0', 'checked' => '1' ),
+		'title'		=>		__( 'Disable local SSL certificate verification', 'it-l10n-backupbuddy' ),
+		'tip'		=>		__( '[Default: Disabled] When checked, WordPress will skip local https SSL verification.', 'it-l10n-backupbuddy' ) . '</span>',
+		'css'		=>		'',
+		'after'		=>		'<span class="description"> ' . __( 'Workaround if local SSL verification fails (ie. for loopback & local CA cert issues).', 'it-l10n-backupbuddy' ) . '</span>',
+		'rules'		=>		'required',
+	) );
+}
 $settings_form->add_setting( array(
 	'type'		=>		'checkbox',
 	'name'		=>		'prevent_flush',

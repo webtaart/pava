@@ -98,7 +98,9 @@ pb_backupbuddy::load_style( 'filetree.css' );
 						<?php
 						}
 						?>
-						window.location.href = '<?php echo $picker_url . '&callback_data=' . pb_backupbuddy::_GET( 'callback_data' ); ?>&sending=<?php echo pb_backupbuddy::_GET( 'sending' ); ?>&selecting=<?php echo pb_backupbuddy::_GET( 'selecting' ); ?>&alert_notice=' + encodeURIComponent( 'New destination successfully added.' );
+						destinationCount = jQuery('.destination_title').length; // Count is 0 based but includes add-new tab so int will match our new tab on reload.
+						window.location.href = '<?php echo $picker_url . '&callback_data=' . pb_backupbuddy::_GET( 'callback_data' ); ?>&tab='+destinationCount+'&sending=<?php echo pb_backupbuddy::_GET( 'sending' ); ?>&selecting=<?php echo pb_backupbuddy::_GET( 'selecting' ); ?>&alert_notice=' + encodeURIComponent( 'New destination successfully added.' );
+						win.scrollTo(0,0);
 					} else if ( data == 'Settings saved.' ) {
 						jQuery( '.pb_backupbuddy_destpicker_saveload' ).hide();
 						jQuery( '.nav-tab-active' ).find( '.destination_title' ).text( new_title );

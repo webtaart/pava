@@ -62,7 +62,7 @@ $restoreData = $rollback->getState();
 
 <?php if ( true === $restoreData['autoAdvance'] ) { // Auto-advance if enabled. ?>
 	
-	<?php _e( 'Continuing to next step... You should be redirected momentarily.', 'it-l10n-backupbuddy' ); ?>
+	<?php _e( 'Continuing to next step... It should run momentarily.', 'it-l10n-backupbuddy' ); ?>
 	<br><br>
 	
 	<script>
@@ -77,5 +77,5 @@ $restoreData = $rollback->getState();
 <form id="pb_backupbuddy_rollback_form" method="post" action="?action=pb_backupbuddy_backupbuddy&function=rollback&step=2&archive=<?php echo basename( $restoreData['archive'] ); ?>">
 	<?php pb_backupbuddy::nonce(); ?>
 	<input type="hidden" name="restoreData" value="<?php echo base64_encode( serialize( $restoreData ) ); ?>">
-	<input type="submit" name="submitForm" class="button button-primary" value="<?php echo __('Next Step') . ' &raquo;'; ?>">
+	<input type="submit" name="submitForm" class="button button-primary" value="<?php echo __('Next Step') . ' &raquo;'; ?>" style="visibility: hidden;">
 </form>

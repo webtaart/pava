@@ -48,7 +48,7 @@ if ( '' != $import_serial ) { // importbuddy has a serial. Look for a default st
 		if ( file_exists( $override_state_file ) ) {
 			$statedata = file_get_contents( $override_state_file );
 			// Unserialize data; If it fails it then decodes the obscufated data then unserializes it..
-			if ( !is_serialized( $statedata ) || ( false === ( $return = unserialize( $statedata ) ) ) ) {
+			if ( ! is_serialized( $statedata ) || ( false === ( $return = unserialize( $statedata ) ) ) ) {
 				// Skip first line.
 				$second_line_pos = strpos( $statedata, "\n" ) + 1;
 				$statedata = substr( $statedata, $second_line_pos );
@@ -64,7 +64,7 @@ if ( '' != $import_serial ) { // importbuddy has a serial. Look for a default st
 					$statedata['homeurl'] = rtrim( $statedata['homeurl'], '/' );
 				}
 				
-				//pb_backupbuddy::status( 'details', 'Loaded default state overwrite file data and gave it priority over current state. File: `' . $override_state_file . '`.' );
+				pb_backupbuddy::status( 'details', 'Loaded default state override state file data and gave it priority over current state. File: `' . $override_state_file . '`.' );
 				pb_backupbuddy::$options['default_state_overrides'] = $statedata;
 				//print_r( pb_backupbuddy::$options['default_state_overrides'] );
 				pb_backupbuddy::save();
@@ -73,7 +73,10 @@ if ( '' != $import_serial ) { // importbuddy has a serial. Look for a default st
 			}
 		}
 		
+	} else {
+		pb_backupbuddy::status( 'details', 'Override state file not found at `' . $override_state_file . '`. Skipping.' );
 	}
+	
 }
 
 // Handle API calls if backupbuddy_api_key is posted. If anything fails security checks pretend nothing at all happened.

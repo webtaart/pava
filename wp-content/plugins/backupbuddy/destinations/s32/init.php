@@ -221,7 +221,6 @@ class pb_backupbuddy_destination_s32 { // Change class name end to match destina
 			}
 			
 			// Initiate multipart upload with S3.
-			pb_backupbuddy::status( 'details', 'Initiating multipart transfer.' );
 			$thisCall = array(
 				'Bucket' => $settings['bucket'],
 				'Key' => $settings['directory'] . basename( $file ),
@@ -232,6 +231,7 @@ class pb_backupbuddy_destination_s32 { // Change class name end to match destina
 				$thisCall['Key'] = $settings['_stash_object'];
 				unset( $thisCall['StorageClass'] );
 			}
+			pb_backupbuddy::status( 'details', 'Initiating multipart transfer.' );
 			try {
 				$response = self::$_client->createMultipartUpload( $thisCall );
 			} Catch( Exception $e ) {

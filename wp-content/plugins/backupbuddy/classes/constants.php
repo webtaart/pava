@@ -47,6 +47,7 @@ class backupbuddy_constants {
 		'/wp-snapshots/', // Don't backup backups of other plugins.
 		'/wp-content/ai1wm-backups/', // All in One WordPress Migration backups. Don't backup backups of other plugins.
 		'/wp-content/plugins/wordfence/tmp/', // Temporary wordfence data.
+		'/error_log', // Can be very large; server-specific and unlikely to need.
 	);
 	
 	// Remote Sends

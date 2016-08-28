@@ -47,7 +47,12 @@ class pb_backupbuddy_actions extends pb_backupbuddy_actionscore {
 							$text );
 	}
 	
-	
+	function iterate_edits_since_last ($post_id, $post, $updated) {
+		if ($post->post_type != 'revision' && $post->post_type != 'attachment' && $post->post_type != 'nav_menu_item') {
+			pb_backupbuddy::$options['edits_since_last']++;
+			pb_backupbuddy::save();
+		}
+	}
 	
 	/*	content_editor_backup_reminder_on_update()
 	 *	
@@ -61,8 +66,6 @@ class pb_backupbuddy_actions extends pb_backupbuddy_actionscore {
 			return $messages;
 		}
 			
-		pb_backupbuddy::$options['edits_since_last']++;
-		pb_backupbuddy::save();
 		$admin_url = '';
 		//Only show the backup message for network admins or adminstrators
 		if ( is_multisite() && current_user_can( 'manage_network' ) ) { // Network Admin in multisite. Don't show messages in this case.

@@ -1107,4 +1107,21 @@
 	Fix importbuddy bug that breaks wp-config.php when password contains a single quote ('). - Glenn Ansley
 	When checking for wp-config.php in parent directory, also make sure wp-settings.php isn't there. - Glenn Ansley
 	Catch instances where fread length param was bad during log file truncation. - Glenn Ansley
+7.1.5.6 - 2016-08-17 - Dustin Bolton
+	ImportBuddy: Added additional logging to Deployment load of state file.
+	Deployment: Don't attempt to reset settings if missing during importbuddy resulting in Error #843797944. - Glenn Ansley
+	Fixed count of how many new edits have been made since the last backup. Was showing more changes than had actually been saved. - Gary Harris
+	Added additional logging and checks for Stash Live pending files to prevent hanging transfers.
+7.1.6.0 - 2016-08-23 - Dustin Bolton
+	Rollback: Now hiding next step button as process proceeds on its own.
+	FEATURE:
+		Stash Live: Now tracking daily statistics including the number of files and database tables sent and total size of database tables and files sent per day. Displayed under Advanced Troubleshooting Options.
+	FEATURE:
+		Sync: Added support for new daily stats tracking.
+	When creating a new remote destination auto-select the new destination. - Glenn Ansley
+	Skip local ssl verification. Don't show override options in Advanced settings in WP 4.6 or later as 4.6's new default it to skip this verification. - Glenn Ansley
+	ImportBuddy: Fixed version not being appended to asset URLs (js, css) resulting in caches not always getting busted with latest version.
+	Now excluding /error_log from backups by default. These can grow very large.
+	Changed PHP minimum value for Stash Live to a string for some PHP versions not casting it from float to string resulting in failure in version comparison.
+	Release of Quick Release updates 7.1.5.1-7.1.5.6.
 	

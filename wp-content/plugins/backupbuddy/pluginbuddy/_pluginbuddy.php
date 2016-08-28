@@ -194,6 +194,12 @@ class pb_backupbuddy {
 			return self::$_settings[$type];
 		}
 		
+		if ( defined( 'PB_STANDALONE' ) && ( PB_STANDALONE === true ) ) {
+			if ( 'version' == $type ) {
+				return PB_BB_VERSION;
+			}
+		}
+		
 		// The variable does not exist so check to see if it can be extracted from the plugin's header.
 		//if ( self::blank( @self::$_settings['name'] ) ) {
 		if ( !isset( self::$_settings['name'] ) || ( self::$_settings['name'] == '' ) ) {
@@ -405,11 +411,13 @@ class pb_backupbuddy {
 				return;
 			} else { // Missing or corrupt options when loading. Either a new install or settings went missing.
 				
-				// Check for a settings backup and try to load it.
-				if ( false !== ( $restored_settings = self::load_from_backup() ) ) {
-					$options = $restored_settings;
-				} else { // Load defaults.
-					$options = (array)self::settings( 'default_options' );
+				// Check for a settings backup and try to load it if were not in a standalone script
+				if ( ! defined( 'PB_STANDALONE' ) || PB_STANDALONE === false ) {
+					if ( false !== ( $restored_settings = self::load_from_backup() ) ) {
+						$options = $restored_settings;
+					} else { // Load defaults.
+						$options = (array)self::settings( 'default_options' );
+					}
 				}
 			}
 		} else {

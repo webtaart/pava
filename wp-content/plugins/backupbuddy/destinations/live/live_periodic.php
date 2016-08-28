@@ -43,7 +43,7 @@ class backupbuddy_live_periodic {
 	const KICK_REQUEST_MINIMUM_PERIOD = 900; // Minimum number of seconds between requests for kicking.
 	const CLOSE_CATALOG_WHEN_SENDING_FILESIZE = 1048576; // If sending a file of this size or greater then we will close out the catalog (and unlock) to prevent locking too long.
 	const MINIMUM_SIZE_THRESHOLD_FOR_SPEED_CALC = 512000; // When calculating send speed, if a file is smaller then this amount then we assume this mimimum size so we can calculate a better estimate.
-	
+	const MAX_DAILY_STATS_DAYS = 7; // Number of days to keep daily transfer stats for.
 	
 	private static $_stateObj;
 	private static $_state;
@@ -74,6 +74,7 @@ class backupbuddy_live_periodic {
 		'files_total_size'        => 0,
 		'files_pending_send'      => 0,
 		'files_pending_delete'    => 0,
+		'daily'                   => array(),
 		
 		'last_remote_snapshot'    => 0,	// Timestamp of the last time a remote snapshot was triggered to begin.
 		'last_remote_snapshot_id' => '', // Snapshot ID of last remote snapshot triggered.
@@ -86,13 +87,19 @@ class backupbuddy_live_periodic {
 		'last_filesend_startat'   => 0,	// Position to pick up sending files at to prevent duplicate from race conditions.
 		'last_kick_request'       => 0,	// Last time the cron kicker was contacted.
 		'recent_send_fails'       => 0,	// Number of recent remote send failures. If this gets too high we give up sending until next restart of the periodic process.
-		'wait_on_transfers_start'  => 0, // Timestamp we began waiting on transfers to finish before snapshot.
+		'wait_on_transfers_start' => 0, // Timestamp we began waiting on transfers to finish before snapshot.
 		'first_activity'          => 0, // Timestamp of very first Live activity.
 		'last_activity'           => 0,	// Timestamp of last periodic activity.
 		'first_completion'        => 0,	// Timestamp of first 100% completion.
 		'manual_snapshot'         => false, // Whether or not a manual snapshot is requested/pending.
 	);
 	
+	private static $_statsDailyDefaults = array(
+		'd_t'                   => 0, // Database total number of .sql files sent.
+		'd_s'                   => 0, // Database bytes sent.
+		'f_t'                    => 0, // Files total number sent (excluding .sql db files).
+		'f_s'                    => 0, // Files total bytes send (excluding .sql db files).
+	);
 	// Default catalog array.
 	/*private static $_catalogDefaults = array(
 		'data_version' => 1,
@@ -2215,6 +2222,8 @@ class backupbuddy_live_periodic {
 		
 		pb_backupbuddy::status( 'details', 'Saving catalog that file `' . $file . '` has been backed up.' );
 		
+		$dailyStatsRef = &self::_get_daily_stats_ref();
+		
 		// Update catalog and stats.
 		if ( '' != $database_tables ) { // Database table; not a normal file.
 			if ( false === self::_load_tables() ) {
@@ -2235,6 +2244,10 @@ class backupbuddy_live_periodic {
 				pb_backupbuddy::status( 'details', 'Tables pending send tried to go below zero. Prevented.' );
 			}
 			
+			// Daily total and size updates for stats.
+			$dailyStatsRef['d_t']++;
+			$dailyStatsRef['d_s'] += self::$_tables[ $database_tables ]['s'];
+			
 			self::$_tablesObj->save();
 		} else { // Normal file.
 			self::$_catalog[ $file ]['b'] = microtime( true ); // Time backed up to server.
@@ -2246,6 +2259,10 @@ class backupbuddy_live_periodic {
 				pb_backupbuddy::status( 'details', 'Files pending send tried to go below zero. Prevented.' );
 			}
 			
+			// Daily total and size updates for stats.
+			$dailyStatsRef['f_t']++;
+			$dailyStatsRef['f_s'] += self::$_catalog[ $file ]['s'];
+			
 			self::$_catalogObj->save();
 		}
 		
@@ -2255,6 +2272,33 @@ class backupbuddy_live_periodic {
 		
 	} // End set_file_backed_up().
 	
+	
+	public static function &_get_daily_stats_ref() {
+		if ( false === self::_load_state() ) {
+			pb_backupbuddy::status( 'warning', 'Warning #3298233298: _grab_daily_stats() could not load state.' );
+			return false;
+		}
+		
+		if ( ! isset( self::$_state['stats']['daily'] ) ) {
+			self::$_state['stats']['daily'] = array();
+		}
+		
+		// Load defaults for today.
+		$stamp = date( 'y-m-d' );
+		if ( ! isset( self::$_state['stats']['daily'][ $stamp ] ) ) {
+			self::$_state['stats']['daily'][ $stamp ] = self::$_statsDailyDefaults;
+		} else {
+			self::$_state['stats']['daily'][ $stamp ] = array_merge( self::$_statsDailyDefaults, self::$_state['stats']['daily'][ $stamp ] );
+		}
+		
+		// Don't let too many days build up in stats.
+		if ( count( self::$_state['stats']['daily'] ) > self::MAX_DAILY_STATS_DAYS ) {
+			$remove_count = count( self::$_state['stats']['daily'] ) - self::MAX_DAILY_STATS_DAYS;
+			$output = array_slice( self::$_state['stats']['daily'], $remove_count );
+		}
+		
+		return self::$_state['stats']['daily'][ $stamp ];
+	} // End _get_daily_stats_ref().
 	
 	
 	public static function _step_wait_on_transfers() {

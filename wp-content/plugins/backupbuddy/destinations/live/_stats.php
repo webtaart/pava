@@ -281,7 +281,7 @@ if ( 0 != $stats['first_completion'] ) {
 
 
 
-
+$stats['daily_stats'] = $state['stats']['daily'];
 
 
 // Include Stash stats. Note that these are cached.
